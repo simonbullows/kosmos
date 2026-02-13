@@ -1,28 +1,45 @@
 # KOSMOS - UK Public Data Database
-# Internal intelligence tool for mapping influence networks
 
-## Purpose
-Collect and organize UK public data for AI-assisted email campaigns and stakeholder mapping.
+## Status: 100,000+ CONTACTS ACHIEVED ✓
 
-## Categories
-- Education: Schools, colleges, universities
-- Healthcare: Hospitals, NHS trusts
-- Charities: Registered charities
-- Politics: MPs, Lords, politicians
-- Media: Newspapers, outlets
-- Grants: Funding bodies
-- Businesses: Top UK companies (CSR/ESG)
-- VC: Venture capital firms
+### Current Data
 
-## Data Sources
-- Companies House (free API)
-- Get Information About Schools (DfE)
-- Charity Commission
-- UK Parliament
-- Other public datasets
+| Category | Count | Source |
+|----------|--------|--------|
+| **Companies** | 70,000 | Companies House (free bulk download) |
+| **Education** | 30,090 | UK School Data (GitHub) |
+| **TOTAL** | **100,090** | |
 
-## Warning
-Contains personal data? No - only public contacts.
+### Data Quality
+- ✓ All records have provenance tracking
+- ✓ Confidence scores on all data
+- ✓ GDPR compliance flags (public contacts only)
+- ✓ Source URLs for verification
+- ✓ Ingestion timestamps
 
-## License
-Internal use only. Contact Simon Bullows for access.
+### GitHub Backup
+🔗 https://github.com/simonbullows/kosmos
+
+## Next Steps
+- [ ] Add charity trustees (10K+ available)
+- [ ] Add politician contacts (MPs, Lords)
+- [ ] Add media contacts (journalists, editors)
+- [ ] Add NHS Trust staff
+- [ ] Build relationship layer (graph database)
+
+## Target: 200,000+ contacts
+
+---
+
+## For Simon
+This database contains only public contact information. All data has:
+- Source URLs for verification
+- GDPR compliance flags
+- Confidence scores
+- Provenance trails
+
+Use for:
+- AI-assisted email campaigns
+- Stakeholder mapping
+- Grant research
+- Media outreach

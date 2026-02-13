@@ -51,6 +51,7 @@ def load_region(region):
     urls = {
         'Leicester': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/leicester_schools_enriched.csv',
         'Nottingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/nottingham_schools_enriched.csv',
+        'Derbyshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/derbyshire_schools_enriched.csv',
     }
     
     if region not in urls:
@@ -128,7 +129,7 @@ else:
     
 # Stats
 st.sidebar.header("📊 Coverage")
-st.sidebar.write("Leicester: ✅ Complete")
-st.sidebar.write("Nottingham: ✅ Complete")  
-st.sidebar.write("Derbyshire: 🔄 Processing")
+st.sidebar.write("Leicester: ✅ 381 schools")
+st.sidebar.write("Nottingham: ✅ 334 schools")  
+st.sidebar.write("Derbyshire: ✅ 485 schools")
 st.sidebar.write("Warwickshire: ⏳ Queued")

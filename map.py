@@ -52,6 +52,7 @@ def load_region(region):
         'Leicester': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/leicester_schools_enriched.csv',
         'Nottingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/nottingham_schools_enriched.csv',
         'Derbyshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/derbyshire_schools_enriched.csv',
+        'Warwickshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/warwickshire_schools_enriched.csv',
     }
     
     if region not in urls:
@@ -66,7 +67,7 @@ def load_region(region):
 st.title("🗺️ KOSMOS Schools Regional Map")
 
 # Region selector
-region = st.selectbox("Select Region", ["Leicester", "Nottingham", "Derbyshire"])
+region = st.selectbox("Select Region", ["Leicester", "Nottingham", "Derbyshire", "Warwickshire"])
 
 # Load data
 df = load_region(region)
@@ -132,4 +133,6 @@ st.sidebar.header("📊 Coverage")
 st.sidebar.write("Leicester: ✅ 381 schools")
 st.sidebar.write("Nottingham: ✅ 334 schools")  
 st.sidebar.write("Derbyshire: ✅ 485 schools")
-st.sidebar.write("Warwickshire: ⏳ Queued")
+st.sidebar.write("Warwickshire: ✅ 239 schools")
+st.sidebar.write("---")
+st.sidebar.write("**Total: 1,439 schools**")

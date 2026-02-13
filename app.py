@@ -1,16 +1,19 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
+import urllib.request
 
-DB_FILE = "/home/ubuntu/.openclaw/workspace/kosmos/data/kosmos_csr_export.csv"
+CSV_URL = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/kosmos_csr_export.csv"
 
 st.set_page_config(page_title="KOSMOS Database", layout="wide")
 st.title("🔗 KOSMOS Database")
 st.markdown("UK Stakeholder Mapping for CSR Programmes")
 
-# Load data from CSV
+# Load data from GitHub
 try:
-    df = pd.read_csv(DB_FILE)
+    import io
+    data = urllib.request.urlopen(CSV_URL).read().decode('utf-8')
+    df = pd.read_csv(io.StringIO(data))
     st.metric("Total CSR Companies", f"{len(df):,}")
     
     # Search

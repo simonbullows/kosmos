@@ -2,172 +2,257 @@ import streamlit as st
 import pandas as pd
 import urllib.request
 import io
+import json
+from datetime import datetime
 
 st.set_page_config(page_title="KOSMOS CRM", layout="wide", page_icon="🔗")
 
-# Load all data from GitHub
+# Session state for CRM data
+if 'contacts' not in st.session_state:
+    st.session_state.contacts = {}
+if 'lists' not in st.session_state:
+    st.session_state.lists = {"Favorites": [], "To Contact": [], "Contacted": [], "Interested": []}
+if 'notes' not in st.session_state:
+    st.session_state.notes = {}
+if 'activity' not in st.session_state:
+    st.session_state.activity = []
+
+# Load data from GitHub
 @st.cache_data
-def load_data():
-    # Companies
-    companies_url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/kosmos_csr_export.csv"
-    companies = pd.read_csv(io.StringIO(urllib.request.urlopen(companies_url).read().decode('utf-8')))
-    companies['type'] = 'Company'
-    
-    # Schools (real data)
-    schools_url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/schools_export.csv"
-    schools = pd.read_csv(io.StringIO(urllib.request.urlopen(schools_url).read().decode('utf-8')))
-    schools['type'] = 'School'
-    schools['status'] = 'Active'
-    schools['display'] = schools.apply(lambda x: f"{x['name'][:50]} | {x['town'] or 'N/A'}", axis=1)
-    
-    # Media
-    media_data = [
-        {"name": "BBC News", "type": "Media", "category": "Broadcast", "town": "London", "postcode": "W1A 1AA", "county": "", "status": "Active"},
-        {"name": "The Guardian", "type": "Media", "category": "Newspaper", "town": "London", "postcode": "N1 9GU", "county": "", "status": "Active"},
-        {"name": "The Telegraph", "type": "Media", "category": "Newspaper", "town": "London", "postcode": "SW1A 1AA", "county": "", "status": "Active"},
-        {"name": "Sky News", "type": "Media", "category": "Broadcast", "town": "London", "postcode": "W12 7RJ", "county": "", "status": "Active"},
-        {"name": "ITV News", "type": "Media", "category": "Broadcast", "town": "London", "postcode": "WC2X 8JL", "county": "", "status": "Active"},
-        {"name": "Channel 4 News", "type": "Media", "category": "Broadcast", "town": "London", "postcode": "W1F 7LX", "county": "", "status": "Active"},
-    ]
-    media = pd.DataFrame(media_data)
-    
-    # Healthcare
-    healthcare_data = [
-        {"name": "NHS Trusts", "type": "Healthcare", "category": "NHS Trust", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-        {"name": "Hospitals", "type": "Healthcare", "category": "Hospital", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-        {"name": "GP Practices", "type": "Healthcare", "category": "Primary Care", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-        {"name": "Care Homes", "type": "Healthcare", "category": "Social Care", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-    ]
-    healthcare = pd.DataFrame(healthcare_data)
-    
-    # Charities
-    charities_data = [
-        {"name": "National Charities", "type": "Charity", "category": "National", "town": "London", "postcode": "", "county": "", "status": "Active"},
-        {"name": "Local Charities", "type": "Charity", "category": "Local", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-        {"name": "Community Interest Companies", "type": "Charity", "category": "CIC", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-    ]
-    charities = pd.DataFrame(charities_data)
-    
-    # Government
-    government_data = [
-        {"name": "Local Councils", "type": "Government", "category": "Local Authority", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-        {"name": "MPs - Parliament", "type": "Government", "category": "Parliament", "town": "London", "postcode": "SW1A 0AA", "county": "", "status": "Active"},
-        {"name": "Councillors", "type": "Government", "category": "Local", "town": "Various", "postcode": "", "county": "", "status": "Active"},
-    ]
-    government = pd.DataFrame(government_data)
-    
-    return companies, schools, media, healthcare, charities, government
+def load_companies():
+    url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/kosmos_csr_export.csv"
+    df = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    df['type'] = 'Company'
+    return df
 
-companies, schools, media, healthcare, charities, government = load_data()
+@st.cache_data
+def load_schools():
+    url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/schools_export.csv"
+    df = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    df['type'] = 'School'
+    return df
 
-# Sidebar
+companies = load_companies()
+schools = load_schools()
+
+# All contacts
+all_contacts = pd.concat([companies, schools], ignore_index=True)
+all_contacts['display'] = all_contacts.apply(lambda x: f"{x['name'][:45]} | {x['town'] or 'N/A'}", axis=1)
+
+# Sidebar navigation
 st.sidebar.title("🔗 KOSMOS CRM")
-st.sidebar.markdown("---")
+page = st.sidebar.radio("Navigate", ["Contacts", "Lists", "Pipeline", "Activity", "Settings"])
 
-# Stats
-total = len(companies) + len(schools) + len(media) + len(healthcare) + len(charities) + len(government)
-st.sidebar.metric("Total Contacts", f"{total:,}")
-
-# Category filter
-categories = {
-    "All": "all",
-    "🏢 Companies": "company",
-    "🏫 Schools": "school",
-    "📰 Media": "media",
-    "🏥 Healthcare": "healthcare",
-    "❤️ Charities": "charity",
-    "🏛️ Government": "government"
-}
-
-selected = st.sidebar.radio("Category", list(categories.keys()))
-
-# Search
-search = st.sidebar.text_input("🔍 Search", "")
-
-# Filter data
-type_filter = categories[selected]
-
-if type_filter == "all":
-    df = pd.concat([companies, schools, media, healthcare, charities, government])
-else:
-    df = companies if type_filter == "company" else \
-         schools if type_filter == "school" else \
-         media if type_filter == "media" else \
-         healthcare if type_filter == "healthcare" else \
-         charities if type_filter == "charity" else government
-
-if search:
-    df = df[df.apply(lambda x: search.lower() in str(x.values).lower(), axis=1)]
-
-# Main content
-st.title(f"{selected}")
-
-# Stats for current view
-st.markdown(f"### {len(df):,} contacts")
-
-# Show categories breakdown
-if selected == "All":
-    st.markdown("#### Breakdown")
-    breakdown = {
-        "🏢 Companies": len(companies),
-        "🏫 Schools": len(schools),
-        "📰 Media": len(media),
-        "🏥 Healthcare": len(healthcare),
-        "❤️ Charities": len(charities),
-        "🏛️ Government": len(government),
-    }
-    cols = st.columns(6)
-    for i, (cat, count) in enumerate(breakdown.items()):
-        cols[i].metric(cat.split()[1], f"{count:,}")
-
-# Entity selector
-if len(df) > 0:
-    # Get unique names
-    names = df['name'].unique()[:500]
-    selected_name = st.selectbox("Select entity", names)
+# ===== CONTACTS PAGE =====
+if page == "Contacts":
+    st.title("📇 Contacts")
     
-    if selected_name:
-        entity = df[df['name'] == selected_name].iloc[0]
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("### Filter")
+        search = st.text_input("🔍 Search", "")
         
+        # Type filter
+        contact_type = st.multiselect("Type", ["Company", "School"], default=["Company", "School"])
+        
+        # Category filter
+        categories = sorted(all_contacts['category'].dropna().unique())
+        selected_cats = st.multiselect("Category", categories)
+        
+        # Town filter
+        towns = sorted(all_contacts['town'].dropna().unique())
+        selected_towns = st.multiselect("Town", towns[:50])
+        
+        # Status filter
+        status = st.selectbox("Status", ["All", "New", "Contacted", "Interested", "Not Interested"])
+    
+    # Filter data
+    df = all_contacts.copy()
+    
+    if search:
+        df = df[df['name'].str.contains(search, case=False, na=False)]
+    
+    if contact_type:
+        df = df[df['type'].isin(contact_type)]
+    
+    if selected_cats:
+        df = df[df['category'].isin(selected_cats)]
+    
+    if selected_towns:
+        df = df[df['town'].isin(selected_towns)]
+    
+    st.markdown(f"**{len(df):,} contacts**")
+    
+    with col2:
+        # Contact selector
+        if len(df) > 0:
+            selected = st.selectbox("Select contact", df['display'].unique())
+            
+            if selected:
+                contact = df[df['display'] == selected].iloc[0]
+                
+                st.markdown("---")
+                st.subheader(contact['name'])
+                
+                # Details
+                c1, c2, c3 = st.columns(3)
+                c1.write(f"**Type:** {contact['type']}")
+                c2.write(f"**Category:** {contact.get('category', 'N/A')}")
+                c3.write(f"**Town:** {contact.get('town', 'N/A')}")
+                
+                c1, c2 = st.columns(2)
+                c1.write(f"**Postcode:** {contact.get('postcode', 'N/A')}")
+                c2.write(f"**County:** {contact.get('county', 'N/A')}")
+                
+                # Actions
+                st.markdown("### Actions")
+                ac1, ac2, ac3, ac4 = st.columns(4)
+                ac1.button("⭐ Add to Favorites", key="fav")
+                ac2.button("📋 Add to List", key="add_list")
+                ac3.button("📝 Add Note", key="note")
+                ac4.button("📧 Send Email", key="email")
+                
+                # Notes section
+                st.markdown("### Notes")
+                if st.text_area("Add a note", key="note_text"):
+                    if 'notes' not in st.session_state:
+                        st.session_state.notes = {}
+                    st.session_state.notes[contact['name']] = st.session_state.note_text
+                    st.success("Note saved!")
+
+# ===== LISTS PAGE =====
+elif page == "Lists":
+    st.title("📋 Contact Lists")
+    
+    col1, col2 = st.columns([1, 2])
+    
+    with col1:
+        st.markdown("### My Lists")
+        
+        # Create new list
+        new_list = st.text_input("New list name")
+        if st.button("Create List"):
+            if new_list and new_list not in st.session_state.lists:
+                st.session_state.lists[new_list] = []
+                st.success(f"Created: {new_list}")
+        
+        # List selection
+        selected_list = st.radio("Select list", list(st.session_state.lists.keys()))
+    
+    with col2:
+        if selected_list:
+            contacts = st.session_state.lists[selected_list]
+            st.markdown(f"### {selected_list} ({len(contacts)} contacts)")
+            
+            # Add contacts
+            add_contact = st.selectbox("Add contact", all_contacts['display'].unique()[:100])
+            if st.button("Add"):
+                if add_contact not in contacts:
+                    contacts.append(add_contact)
+                    st.session_state.lists[selected_list] = contacts
+                    st.success(f"Added: {add_contact}")
+            
+            # Show contacts
+            if contacts:
+                for i, c in enumerate(contacts):
+                    c1, c2 = st.columns([4, 1])
+                    c1.write(c)
+                    if c2.button("🗑️", key=f"del_{i}"):
+                        contacts.pop(i)
+                        st.session_state.lists[selected_list] = contacts
+                        st.rerun()
+            
+            # Export list
+            if st.button("Export List"):
+                st.markdown("### Export")
+                st.code(json.dumps(contacts), language="json")
+
+# ===== PIPELINE PAGE =====
+elif page == "Pipeline":
+    st.title("📊 Pipeline")
+    
+    # Pipeline stages
+    stages = ["New", "Contacted", "Interested", "Proposal", "Negotiation", "Won", "Lost"]
+    
+    # Sample pipeline data
+    pipeline_data = {
+        "New": ["Acme Corp", "TechStart Ltd"],
+        "Contacted": ["BigCo Industries", "Local Council"],
+        "Interested": ["Charity ABC"],
+        "Proposal": [],
+        "Negotiation": [],
+        "Won": [],
+        "Lost": []
+    }
+    
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        # Drag and drop (simulated with selectbox)
+        st.markdown("### Manage Pipeline")
+        
+        for stage in stages:
+            st.markdown(f"**{stage}** ({len(pipeline_data[stage])})")
+            if pipeline_data[stage]:
+                for company in pipeline_data[stage]:
+                    c1, c2 = st.columns([3, 1])
+                    c1.write(f"  {company}")
+                    c2.selectbox("", ["Move →"], key=f"move_{company}")
+            st.markdown("---")
+
+# ===== ACTIVITY PAGE =====
+elif page == "Activity":
+    st.title("📝 Activity Log")
+    
+    # Sample activity
+    activity = [
+        {"date": "2026-02-13", "action": "Contacted", "company": "Acme Corp", "notes": "Initial outreach"},
+        {"date": "2026-02-12", "action": "Email sent", "company": "TechStart Ltd", "notes": "Follow up"},
+        {"date": "2026-02-11", "action": "Meeting", "company": "Local Council", "notes": "Discussed partnership"},
+    ]
+    
+    # Log new activity
+    with st.form("add_activity"):
+        st.markdown("### Log Activity")
+        c1, c2 = st.columns(2)
+        company = c1.selectbox("Company", all_contacts['name'].unique()[:100])
+        action = c2.selectbox("Action", ["Contacted", "Email sent", "Called", "Meeting", "Follow up"])
+        notes = st.text_area("Notes")
+        
+        if st.form_submit_button("Log Activity"):
+            activity.insert(0, {"date": datetime.now().strftime("%Y-%m-%d"), "action": action, "company": company, "notes": notes})
+            st.success("Activity logged!")
+    
+    # Show activity
+    st.markdown("### Recent Activity")
+    for a in activity:
+        st.markdown(f"**{a['date']}** - {a['action']} - {a['company']}")
+        st.caption(a['notes'])
         st.markdown("---")
-        st.subheader(entity['name'])
-        
-        col1, col2, col3 = st.columns(3)
-        col1.write(f"**Type:** {entity['type']}")
-        col2.write(f"**Category:** {entity.get('category', 'N/A')}")
-        col3.write(f"**Status:** {entity.get('status', 'N/A')}")
-        
-        col1, col2, col3 = st.columns(3)
-        col1.write(f"**Town:** {entity.get('town', 'N/A')}")
-        col2.write(f"**Postcode:** {entity.get('postcode', 'N/A')}")
-        col3.write(f"**County:** {entity.get('county', 'N/A')}")
-        
-        # Actions
-        st.markdown("### Actions")
-        action_cols = st.columns(4)
-        action_cols[0].button("📧 Email", key="email")
-        action_cols[1].button("📞 Call", key="call")
-        action_cols[2].button("⭐ Add to List", key="add")
-        action_cols[3].button("📝 Notes", key="notes")
 
-# Data table
-with st.expander("View Raw Data"):
-    st.dataframe(df.head(100), use_container_width=True)
+# ===== SETTINGS PAGE =====
+elif page == "Settings":
+    st.title("⚙️ Settings")
+    
+    st.markdown("### Data Sources")
+    st.write(f"Companies: {len(companies):,}")
+    st.write(f"Schools: {len(schools):,}")
+    st.write(f"Total: {len(all_contacts):,}")
+    
+    st.markdown("### Export Data")
+    if st.button("Export All Contacts"):
+        csv = all_contacts.to_csv(index=False).encode('utf-8')
+        st.download_button("📥 Download CSV", csv, "kosmos_contacts.csv", "text/csv")
+    
+    st.markdown("### Import Data")
+    uploaded = st.file_uploader("Upload CSV", type="csv")
+    if uploaded:
+        df = pd.read_csv(uploaded)
+        st.write(f"Imported: {len(df)} contacts")
 
+# Sidebar stats
 st.sidebar.markdown("---")
-st.sidebar.info("💡 Tip: Select a category and search to find contacts")
-
-# CSV Download
-@st.cache_data
-def convert_df(df):
-    return df.to_csv(index=False).encode('utf-8')
-
-csv = convert_df(df)
-
-st.sidebar.download_button(
-    "📥 Download CSV",
-    csv,
-    "kosmos_export.csv",
-    "text/csv",
-    key='download-csv'
-)
+st.sidebar.metric("Total Contacts", f"{len(all_contacts):,}")
+st.sidebar.metric("Companies", f"{len(companies):,}")
+st.sidebar.metric("Schools", f"{len(schools):,}")

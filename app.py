@@ -80,14 +80,18 @@ if df is not None:
     green = len(df[df['status'] == 'green'])
     orange = len(df[df['status'] == 'orange'])
     red = len(df[df['status'] == 'red'])
+    send_count = df['has_send'].sum() if 'has_send' in df.columns else 0
+    ofsted_count = df['ofsted_rating'].notna().sum() if 'ofsted_rating' in df.columns else 0
     
     st.subheader(f"📊 {selected_region}")
     
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
     col1.metric("Total", total)
     col2.metric("🟢 Complete", green, delta=f"{green/total*100:.0f}%" if total else "0%")
     col3.metric("🟠 Email Only", orange, delta=f"{orange/total*100:.0f}%" if total else "0%")
     col4.metric("🔴 None", red, delta=f"{red/total*100:.0f}%" if total else "0%")
+    col5.metric("⭐ Ofsted", ofsted_count, delta=f"{ofsted_count/total*100:.0f}%" if total else "0%")
+    col6.metric("♿ SEND", send_count, delta=f"{send_count/total*100:.0f}%" if total else "0%")
     
     # Map
     map_data = []
@@ -118,13 +122,17 @@ if df is not None:
                 'has_financial_reports': row.get('has_financial_reports', False),
                 'all_emails': str(row.get('all_emails', '')) if pd.notna(row.get('all_emails', '')) else '',
                 'staff_contacts': str(row.get('staff_contacts', '')) if pd.notna(row.get('staff_contacts', '')) else '',
+                # New enrichment fields
+                'ofsted_rating': str(row.get('ofsted_rating', '')) if pd.notna(row.get('ofsted_rating', '')) else '',
+                'has_send': row.get('has_send', False),
+                'governors': str(row.get('governors', '')) if pd.notna(row.get('governors', '')) else '',
             })
     
     if map_data:
         map_df = pd.DataFrame(map_data)
         st.map(map_df, zoom=8)
         
-        st.caption("🟢 = Email + Headteacher + Pupil Premium | 🟠 = Email only | 🔴 = No email")
+        st.caption("🟢 = Email + Headteacher + Pupil Premium | 🟠 = Email only | 🔴 = No email | ⭐ = Ofsted rated | ♿ = SEND support")
         
         # Search
         search = st.text_input("Search schools", "")
@@ -200,6 +208,19 @@ if df is not None:
                     st.write("---")
                     st.write("**📬 All Emails:**")
                     st.write(f"  {school['all_emails']}")
+                
+                # NEW: Ofsted, SEND, Governors
+                st.write("---")
+                st.write("**🏫 Ofsted & SEND:**")
+                ofsted = school.get('ofsted_rating', '')
+                st.write(f"  Rating: {ofsted if ofsted else '❌ Not found'}")
+                send = school.get('has_send', False)
+                st.write(f"  SEND Support: {'✅ Yes' if send else '❌ No/Unknown'}")
+                
+                if school.get('governors'):
+                    st.write("---")
+                    st.write("**👥 Governors:**")
+                    st.write(f"  {school['governors']}")
 
 # Sidebar
 st.sidebar.header("📊 All Regions")
@@ -209,3 +230,8 @@ st.sidebar.write("Derbyshire: 485 (58% email)")
 st.sidebar.write("Warwickshire: 239 (58% email)")
 st.sidebar.write("---")
 st.sidebar.write("**Total: 1,439 schools**")
+st.sidebar.write("---")
+st.sidebar.write("**New Data Available:**")
+st.sidebar.write("• Ofsted ratings")
+st.sidebar.write("• SEND facilities")
+st.sidebar.write("• Governor names")

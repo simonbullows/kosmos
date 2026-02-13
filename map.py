@@ -31,9 +31,9 @@ def geocode_uk(postcode):
     
     return 52.5 + random.uniform(-0.5, 0.5), -1.5 + random.uniform(-0.5, 0.5)
 
+# Load single region
 @st.cache_data
-def load_all_regions():
-    """Load all available regions"""
+def load_region(region):
     urls = {
         'Leicester': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/leicester_schools_enriched.csv',
         'Nottingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/nottingham_schools_enriched.csv',
@@ -41,26 +41,28 @@ def load_all_regions():
         'Warwickshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/warwickshire_schools_enriched.csv',
     }
     
-    all_dfs = []
-    for region, url in urls.items():
-        try:
-            df = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
-            df['region'] = region
-            all_dfs.append(df)
-        except:
-            pass
+    if region not in urls:
+        return None
     
-    if all_dfs:
-        return pd.concat(all_dfs, ignore_index=True)
-    return None
+    try:
+        df = pd.read_csv(io.StringIO(urllib.request.urlopen(urls[region]).read().decode('utf-8')))
+        df['region'] = region
+        return df
+    except Exception as e:
+        st.error(f"Error loading {region}: {e}")
+        return None
 
-st.title("🗺️ KOSMOS Schools Map - Midlands")
+st.title("🗺️ KOSMOS Schools Map")
 
-# Load all regions
-df = load_all_regions()
+# Region selector
+regions = ['Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
+selected_region = st.selectbox("Select Region", regions)
+
+# Load data
+df = load_region(selected_region)
 
 if df is not None:
-    # Determine status
+    # Status
     def get_status(row):
         has_email = pd.notna(row.get('email', '')) and str(row.get('email', '')).strip() != ''
         has_head = pd.notna(row.get('head_first_name', '')) or pd.notna(row.get('head_last_name', ''))
@@ -76,16 +78,16 @@ if df is not None:
     df['status'] = df.apply(get_status, axis=1)
     
     # Stats
-    st.metric("Total Schools", len(df))
+    st.metric("Schools", len(df))
     
-    col1, col2, col3, col4 = st.columns(4)
     green = len(df[df['status'] == 'green'])
     orange = len(df[df['status'] == 'orange'])
     red = len(df[df['status'] == 'red'])
+    
+    col1, col2, col3 = st.columns(3)
     col1.metric("🟢 Best", green)
     col2.metric("🟠 Email", orange)
     col3.metric("🔴 None", red)
-    col4.metric("Regions", df['region'].nunique())
     
     # Create map data
     map_data = []
@@ -97,7 +99,6 @@ if df is not None:
                 'lon': lon,
                 'name': str(row.get('name', ''))[:40],
                 'town': str(row.get('town', '')),
-                'region': str(row.get('region', '')),
                 'email': str(row.get('email', 'N/A')),
                 'head': f"{row.get('head_first_name', '')} {row.get('head_last_name', '')}".strip(),
                 'has_pp': row.get('has_pupil_premium', False),
@@ -106,78 +107,36 @@ if df is not None:
     
     if map_data:
         map_df = pd.DataFrame(map_data)
+        st.map(map_df, zoom=8)
         
-        # Filters
-        st.subheader("🔍 Filters")
+        # Legend
+        st.caption("🟢 = Email+Head+Pupil Premium | 🟠 = Email only | 🔴 = No email")
         
-        filter_col, search_col, region_col = st.columns(3)
-        with filter_col:
-            status_filter = st.selectbox("By Status", ["All", "🟢 Best (Email+Head+PP)", "🟠 Email Only", "🔴 No Email"])
-        with search_col:
-            search = st.text_input("Search school", "")
-        with region_col:
-            regions = ["All"] + sorted(df['region'].unique().tolist())
-            region_filter = st.selectbox("By Region", regions)
-        
-        # Apply filters
-        if status_filter != "All":
-            status_map = {
-                "🟢 Best (Email+Head+PP)": "green",
-                "🟠 Email Only": "orange",
-                "🔴 No Email": "red"
-            }
-            map_df = map_df[map_df['status'] == status_map[status_filter]]
-        
-        if region_filter != "All":
-            map_df = map_df[map_df['region'] == region_filter]
-        
+        # Filter
+        search = st.text_input("Search", "")
         if search:
             map_df = map_df[map_df['name'].str.contains(search, case=False, na=False)]
         
         st.metric("Showing", len(map_df))
         
-        # Map
-        st.subheader(f"📍 Schools Map")
-        
-        # Show map
-        if len(map_df) > 0:
-            st.map(map_df, zoom=7)
-        
-        # Legend
-        st.markdown("""
-        **Legend:**
-        - 🟢 Green: Has email + headteacher + pupil premium (best)
-        - 🟠 Orange: Has email  
-        - 🔴 Red: No email yet
-        """)
-        
-        # School list
-        st.subheader("📋 Schools")
-        
-        # Show schools in columns
-        for i in range(0, len(map_df.head(50)), 3):
-            cols = st.columns(3)
-            for j, col in enumerate(cols):
-                idx = i + j
-                if idx < len(map_df):
-                    school = map_df.iloc[idx]
-                    emoji = "🟢" if school['status'] == 'green' else "🟠" if school['status'] == 'orange' else "🔴"
-                    with col:
-                        st.markdown(f"**{emoji} {school['name']}**")
-                        st.caption(f"{school['town']} ({school['region']})")
-                        if school['email'] != 'N/A':
-                            st.caption(f"📧 {school['email']}")
-                        if school['head']:
-                            st.caption(f"👤 {school['head']}")
+        # List
+        for _, school in map_df.head(30).iterrows():
+            emoji = "🟢" if school['status'] == 'green' else "🟠" if school['status'] == 'orange' else "🔴"
+            with st.expander(f"{emoji} {school['name']}"):
+                st.write(f"**Town:** {school['town']}")
+                if school['email'] != 'N/A':
+                    st.write(f"**Email:** {school['email']}")
+                if school['head']:
+                    st.write(f"**Head:** {school['head']}")
 
 else:
-    st.warning("No data available")
+    st.warning("No data")
 
-# Sidebar
+# Stats
 st.sidebar.header("📊 Coverage")
-st.sidebar.write("Leicester: ✅ 381 schools")
-st.sidebar.write("Nottingham: ✅ 334 schools")  
-st.sidebar.write("Derbyshire: ✅ 485 schools")
-st.sidebar.write("Warwickshire: ✅ 239 schools")
+st.sidebar.write("Leicester: 381")
+st.sidebar.write("Nottingham: 334")  
+st.sidebar.write("Derbyshire: 485")
+st.sidebar.write("Warwickshire: 239")
 st.sidebar.write("---")
-st.sidebar.write("**Total: 1,439 schools**")
+st.sidebar.write("Total: 1,439")

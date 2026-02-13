@@ -39,7 +39,22 @@ def load_region(region):
         'Nottingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/nottingham_schools_enriched.csv',
         'Derbyshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/derbyshire_schools_enriched.csv',
         'Warwickshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/warwickshire_schools_enriched.csv',
+        'All Regions': 'ALL'
     }
+    
+    if region == 'All Regions':
+        dfs = []
+        for r, url in urls.items():
+            if r == 'All Regions': continue
+            try:
+                df_r = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+                df_r['region'] = r
+                dfs.append(df_r)
+            except:
+                pass
+        if dfs:
+            return pd.concat(dfs, ignore_index=True)
+        return None
     
     if region not in urls:
         return None
@@ -54,7 +69,7 @@ def load_region(region):
 st.title("🗺️ KOSMOS Schools Map")
 
 # Region selector
-regions = ['Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
+regions = ['All Regions', 'Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
 selected_region = st.selectbox("Select Region", regions)
 
 df = load_region(selected_region)
@@ -224,12 +239,11 @@ if df is not None:
 
 # Sidebar
 st.sidebar.header("📊 All Regions")
+st.sidebar.write("🗺️ **All Regions:** 1,439 schools")
 st.sidebar.write("Leicester: 381 (67% email)")
 st.sidebar.write("Nottingham: 334 (61% email)")
 st.sidebar.write("Derbyshire: 485 (58% email)")
 st.sidebar.write("Warwickshire: 239 (58% email)")
-st.sidebar.write("---")
-st.sidebar.write("**Total: 1,439 schools**")
 st.sidebar.write("---")
 st.sidebar.write("**New Data Available:**")
 st.sidebar.write("• Ofsted ratings")

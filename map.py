@@ -172,3 +172,4 @@ st.sidebar.write("Derbyshire: ✅ 485 schools")
 st.sidebar.write("Warwickshire: ✅ 239 schools")
 st.sidebar.write("---")
 st.sidebar.write("**Total: 1,439 schools**")
+# Updated Fri Feb 13 15:29:55 UTC 2026

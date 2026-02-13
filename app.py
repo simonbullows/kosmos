@@ -110,6 +110,10 @@ if df is not None:
                 'head_job_title': str(row.get('head_job_title', '')) if pd.notna(row.get('head_job_title', '')) else '',
                 'type': str(row.get('type', '')) if pd.notna(row.get('type', '')) else 'MISSING',
                 'postcode': str(row.get('postcode', '')) if pd.notna(row.get('postcode', '')) else 'MISSING',
+                # Address fields
+                'street': str(row.get('street', '')) if pd.notna(row.get('street', '')) else '',
+                'locality': str(row.get('locality', '')) if pd.notna(row.get('locality', '')) else '',
+                'county': str(row.get('county', '')) if pd.notna(row.get('county', '')) else '',
                 'has_pupil_premium': row.get('has_pupil_premium', False),
                 'has_financial_reports': row.get('has_financial_reports', False),
                 'all_emails': str(row.get('all_emails', '')) if pd.notna(row.get('all_emails', '')) else '',
@@ -139,9 +143,26 @@ if df is not None:
                 col1.write(f"**Type:** {school['type']}")
                 col2.write(f"**Town:** {school['town']}")
                 
-                col1, col2 = st.columns(2)
-                col1.write(f"**Postcode:** {school['postcode']}")
-                col2.write(f"**Phone:** {school['phone']}")
+                # Address
+                st.write("---")
+                st.write("**📍 Address:**")
+                parts = []
+                if school.get('street'):
+                    parts.append(str(school.get('street', '')))
+                if school.get('locality'):
+                    parts.append(str(school.get('locality', '')))
+                if school.get('town'):
+                    parts.append(str(school.get('town', '')))
+                if school.get('county'):
+                    parts.append(str(school.get('county', '')))
+                if school.get('postcode'):
+                    parts.append(str(school.get('postcode', '')))
+                
+                address = ', '.join([p for p in parts if p and p != 'nan'])
+                if address:
+                    st.write(f"  {address}")
+                else:
+                    st.write("  ❌ MISSING")
                 
                 # Contact
                 st.write("---")

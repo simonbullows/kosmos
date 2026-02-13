@@ -31,7 +31,7 @@ def geocode_uk(postcode):
     
     return 52.5 + random.uniform(-0.5, 0.5), -1.5 + random.uniform(-0.5, 0.5)
 
-# Load single region
+# Load region
 @st.cache_data
 def load_region(region):
     urls = {
@@ -53,19 +53,18 @@ def load_region(region):
 
 st.title("🗺️ KOSMOS Schools Map")
 
-# Region selector at top
+# Region selector
 regions = ['Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
 selected_region = st.selectbox("Select Region", regions)
 
-# Load data
 df = load_region(selected_region)
 
 if df is not None:
-    # Status
+    # Determine status - only green if ALL three: email + headteacher + pupil premium confirmed
     def get_status(row):
         has_email = pd.notna(row.get('email', '')) and str(row.get('email', '')).strip() != ''
         has_head = pd.notna(row.get('head_first_name', '')) or pd.notna(row.get('head_last_name', ''))
-        has_pp = row.get('has_pupil_premium', False)
+        has_pp = row.get('has_pupil_premium', False) == True or row.get('has_pupil_premium', '') == True
         
         if has_email and has_head and has_pp:
             return 'green'
@@ -76,7 +75,7 @@ if df is not None:
     
     df['status'] = df.apply(get_status, axis=1)
     
-    # Stats - big display
+    # Stats
     total = len(df)
     green = len(df[df['status'] == 'green'])
     orange = len(df[df['status'] == 'orange'])
@@ -86,11 +85,11 @@ if df is not None:
     
     col1, col2, col3, col4 = st.columns(4)
     col1.metric("Total", total)
-    col2.metric("🟢 Best", green, delta=f"{green/total*100:.0f}%")
-    col3.metric("🟠 Email", orange, delta=f"{orange/total*100:.0f}%")
-    col4.metric("🔴 None", red, delta=f"{red/total*100:.0f}%")
+    col2.metric("🟢 Complete", green, delta=f"{green/total*100:.0f}%" if total else "0%")
+    col3.metric("🟠 Email Only", orange, delta=f"{orange/total*100:.0f}%" if total else "0%")
+    col4.metric("🔴 None", red, delta=f"{red/total*100:.0f}%" if total else "0%")
     
-    # Create map data
+    # Map
     map_data = []
     for _, row in df.iterrows():
         lat, lon = geocode_uk(row.get('postcode', ''))
@@ -98,20 +97,30 @@ if df is not None:
             map_data.append({
                 'lat': lat,
                 'lon': lon,
-                'name': str(row.get('name', ''))[:40],
+                'name': str(row.get('name', '')),
                 'town': str(row.get('town', '')),
-                'email': str(row.get('email', 'N/A')),
-                'head': f"{row.get('head_first_name', '')} {row.get('head_last_name', '')}".strip(),
-                'has_pp': row.get('has_pupil_premium', False),
-                'status': row.get('status', 'red')
+                'status': row.get('status', 'red'),
+                # All fields
+                'email': str(row.get('email', '')) if pd.notna(row.get('email', '')) else 'MISSING',
+                'phone': str(row.get('phone', '')) if pd.notna(row.get('phone', '')) else 'MISSING',
+                'website': str(row.get('website', '')) if pd.notna(row.get('website', '')) else 'MISSING',
+                'head_title': str(row.get('head_title', '')) if pd.notna(row.get('head_title', '')) else '',
+                'head_first_name': str(row.get('head_first_name', '')) if pd.notna(row.get('head_first_name', '')) else '',
+                'head_last_name': str(row.get('head_last_name', '')) if pd.notna(row.get('head_last_name', '')) else '',
+                'head_job_title': str(row.get('head_job_title', '')) if pd.notna(row.get('head_job_title', '')) else '',
+                'type': str(row.get('type', '')) if pd.notna(row.get('type', '')) else 'MISSING',
+                'postcode': str(row.get('postcode', '')) if pd.notna(row.get('postcode', '')) else 'MISSING',
+                'has_pupil_premium': row.get('has_pupil_premium', False),
+                'has_financial_reports': row.get('has_financial_reports', False),
+                'all_emails': str(row.get('all_emails', '')) if pd.notna(row.get('all_emails', '')) else '',
+                'staff_contacts': str(row.get('staff_contacts', '')) if pd.notna(row.get('staff_contacts', '')) else '',
             })
     
     if map_data:
         map_df = pd.DataFrame(map_data)
         st.map(map_df, zoom=8)
         
-        # Legend
-        st.caption("🟢 = Email+Head+Pupil Premium | 🟠 = Email only | 🔴 = No email")
+        st.caption("🟢 = Email + Headteacher + Pupil Premium | 🟠 = Email only | 🔴 = No email")
         
         # Search
         search = st.text_input("Search schools", "")
@@ -120,29 +129,62 @@ if df is not None:
         
         st.metric("Showing", len(map_df))
         
-        # List
+        # Show ALL data for each school
         for _, school in map_df.head(30).iterrows():
             emoji = "🟢" if school['status'] == 'green' else "🟠" if school['status'] == 'orange' else "🔴"
+            
             with st.expander(f"{emoji} {school['name']}"):
-                st.write(f"**Town:** {school['town']}")
-                if school['email'] != 'N/A':
-                    st.write(f"**Email:** {school['email']}")
-                if school['head']:
-                    st.write(f"**Head:** {school['head']}")
+                # Basic info
+                col1, col2 = st.columns(2)
+                col1.write(f"**Type:** {school['type']}")
+                col2.write(f"**Town:** {school['town']}")
+                
+                col1, col2 = st.columns(2)
+                col1.write(f"**Postcode:** {school['postcode']}")
+                col2.write(f"**Phone:** {school['phone']}")
+                
+                # Contact
+                st.write("---")
+                st.write("**📧 Contact:**")
+                email = school['email'] if school['email'] != 'MISSING' else '❌ MISSING'
+                st.write(f"  Email: {email}")
+                
+                website = school['website'] if school['website'] != 'MISSING' else '❌ MISSING'
+                st.write(f"  Website: {website}")
+                
+                # Headteacher
+                st.write("---")
+                st.write("**👤 Headteacher:**")
+                head = f"{school['head_title']} {school['head_first_name']} {school['head_last_name']}".strip()
+                if head:
+                    st.write(f"  Name: {head}")
+                else:
+                    st.write("  Name: ❌ MISSING")
+                
+                if school['head_job_title']:
+                    st.write(f"  Title: {school['head_job_title']}")
+                
+                # Pupil Premium
+                st.write("---")
+                st.write("**💰 Pupil Premium:**")
+                pp = school['has_pupil_premium']
+                st.write(f"  Status: {'✅ Yes' if pp else '❌ No/Unknown'}")
+                
+                # Financial
+                fin = school['has_financial_reports']
+                st.write(f"  Financial Reports: {'✅ Yes' if fin else '❌ No/Unknown'}")
+                
+                # All emails
+                if school['all_emails']:
+                    st.write("---")
+                    st.write("**📬 All Emails:**")
+                    st.write(f"  {school['all_emails']}")
 
-# Sidebar with all regions
+# Sidebar
 st.sidebar.header("📊 All Regions")
-
-region_stats = {
-    'Leicester': (381, 257, 241, 118),
-    'Nottingham': (334, 205, 242, None),
-    'Derbyshire': (485, 281, 331, None),
-    'Warwickshire': (239, 138, 136, None),
-}
-
-for region, stats in region_stats.items():
-    total, emails, pp, staff = stats
-    st.sidebar.write(f"**{region}:** {total} schools, {emails} emails ({emails/total*100:.0f}%)")
-
+st.sidebar.write("Leicester: 381 (67% email)")
+st.sidebar.write("Nottingham: 334 (61% email)")
+st.sidebar.write("Derbyshire: 485 (58% email)")
+st.sidebar.write("Warwickshire: 239 (58% email)")
 st.sidebar.write("---")
-st.sidebar.write(f"**Total: 1,439 schools**")
+st.sidebar.write("**Total: 1,439 schools**")

@@ -39,6 +39,11 @@ def load_region(region):
         'Nottingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/nottingham_schools_enriched.csv',
         'Derbyshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/derbyshire_schools_enriched.csv',
         'Warwickshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/warwickshire_schools_enriched.csv',
+        'Staffordshire': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/staffordshire_schools_enriched.csv',
+        'Birmingham': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/birmingham_schools_enriched.csv',
+        'Dudley': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/dudley_schools_enriched.csv',
+        'Walsall': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/walsall_schools_enriched.csv',
+        'Wolverhampton': 'https://raw.githubusercontent.com/simonbullows/kosmos/master/data/wolverhampton_schools_enriched.csv',
         'All Regions': 'ALL'
     }
     
@@ -69,7 +74,8 @@ def load_region(region):
 st.title("🗺️ KOSMOS Schools Map")
 
 # Region selector
-regions = ['All Regions', 'Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
+regions = ['All Regions', 'Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire', 
+           'Staffordshire', 'Birmingham', 'Dudley', 'Walsall', 'Wolverhampton']
 selected_region = st.selectbox("Select Region", regions)
 
 df = load_region(selected_region)
@@ -239,13 +245,13 @@ if df is not None:
 
 # Sidebar
 st.sidebar.header("📊 All Regions")
-st.sidebar.write("🗺️ **All Regions:** 1,439 schools")
-st.sidebar.write("Leicester: 381 (67% email)")
-st.sidebar.write("Nottingham: 334 (61% email)")
-st.sidebar.write("Derbyshire: 485 (58% email)")
-st.sidebar.write("Warwickshire: 239 (58% email)")
+st.sidebar.write("🗺️ **All Regions:** 2,488 schools")
+st.sidebar.write("Leicester: 381 | Nottingham: 334")
+st.sidebar.write("Derbyshire: 485 | Warwickshire: 239")
+st.sidebar.write("Staffordshire: 303 | Birmingham: 301")
+st.sidebar.write("Dudley: 78 | Walsall: 85 | Wolverhampton: 72")
 st.sidebar.write("---")
 st.sidebar.write("**New Data Available:**")
-st.sidebar.write("• Ofsted ratings")
-st.sidebar.write("• SEND facilities")
-st.sidebar.write("• Governor names")
+st.sidebar.write("• Ofsted ratings (enriched regions)")
+st.sidebar.write("• SEND facilities (enriched regions)")
+st.sidebar.write("• Governor names (enriched regions)")

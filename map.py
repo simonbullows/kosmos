@@ -48,13 +48,12 @@ def load_region(region):
         df = pd.read_csv(io.StringIO(urllib.request.urlopen(urls[region]).read().decode('utf-8')))
         df['region'] = region
         return df
-    except Exception as e:
-        st.error(f"Error loading {region}: {e}")
+    except:
         return None
 
 st.title("🗺️ KOSMOS Schools Map")
 
-# Region selector
+# Region selector at top
 regions = ['Leicester', 'Nottingham', 'Derbyshire', 'Warwickshire']
 selected_region = st.selectbox("Select Region", regions)
 
@@ -77,17 +76,19 @@ if df is not None:
     
     df['status'] = df.apply(get_status, axis=1)
     
-    # Stats
-    st.metric("Schools", len(df))
-    
+    # Stats - big display
+    total = len(df)
     green = len(df[df['status'] == 'green'])
     orange = len(df[df['status'] == 'orange'])
     red = len(df[df['status'] == 'red'])
     
-    col1, col2, col3 = st.columns(3)
-    col1.metric("🟢 Best", green)
-    col2.metric("🟠 Email", orange)
-    col3.metric("🔴 None", red)
+    st.subheader(f"📊 {selected_region}")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Total", total)
+    col2.metric("🟢 Best", green, delta=f"{green/total*100:.0f}%")
+    col3.metric("🟠 Email", orange, delta=f"{orange/total*100:.0f}%")
+    col4.metric("🔴 None", red, delta=f"{red/total*100:.0f}%")
     
     # Create map data
     map_data = []
@@ -112,8 +113,8 @@ if df is not None:
         # Legend
         st.caption("🟢 = Email+Head+Pupil Premium | 🟠 = Email only | 🔴 = No email")
         
-        # Filter
-        search = st.text_input("Search", "")
+        # Search
+        search = st.text_input("Search schools", "")
         if search:
             map_df = map_df[map_df['name'].str.contains(search, case=False, na=False)]
         
@@ -129,14 +130,19 @@ if df is not None:
                 if school['head']:
                     st.write(f"**Head:** {school['head']}")
 
-else:
-    st.warning("No data")
+# Sidebar with all regions
+st.sidebar.header("📊 All Regions")
 
-# Stats
-st.sidebar.header("📊 Coverage")
-st.sidebar.write("Leicester: 381")
-st.sidebar.write("Nottingham: 334")  
-st.sidebar.write("Derbyshire: 485")
-st.sidebar.write("Warwickshire: 239")
+region_stats = {
+    'Leicester': (381, 257, 241, 118),
+    'Nottingham': (334, 205, 242, None),
+    'Derbyshire': (485, 281, 331, None),
+    'Warwickshire': (239, 138, 136, None),
+}
+
+for region, stats in region_stats.items():
+    total, emails, pp, staff = stats
+    st.sidebar.write(f"**{region}:** {total} schools, {emails} emails ({emails/total*100:.0f}%)")
+
 st.sidebar.write("---")
-st.sidebar.write("Total: 1,439")
+st.sidebar.write(f"**Total: 1,439 schools**")

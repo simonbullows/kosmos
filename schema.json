@@ -1,0 +1,44 @@
+{
+  "kronos": {
+    "version": "1.0.0",
+    "description": "UK Public Data Database",
+    "categories": {
+      "education": {
+        "fields": ["name", "type", "address", "postcode", "phone", "website", "email", "head_teacher", "ofsted_rating"],
+        "sources": ["EduBase", "Get Information About Schools"]
+      },
+      "healthcare": {
+        "fields": ["name", "type", "address", "postcode", "phone", "website", "trust_name", "cqc_rating"],
+        "sources": ["NHS Trusts Directory", "Care Quality Commission"]
+      },
+      "public_buildings": {
+        "fields": ["name", "type", "address", "postcode", "phone", "website", "council_area"],
+        "sources": ["GOV.UK", "Local council websites"]
+      },
+      "vc": {
+        "fields": ["name", "address", "postcode", "phone", "website", "investment_focus", "stage_preference"],
+        "sources": ["Beauhurst", "PitchBook", "Wikipedia"]
+      },
+      "charities": {
+        "fields": ["name", "address", "postcode", "phone", "website", "charity_number", "registered_date", "trustees"],
+        "sources": ["Charity Commission"]
+      },
+      "politics": {
+        "fields": ["name", "role", "party", "constituency", "address", "phone", "email", "twitter"],
+        "sources": ["TheyWorkForYou", "GOV.UK", "Wikipedia"]
+      },
+      "media": {
+        "fields": ["name", "type", "address", "postcode", "phone", "website", "editor_email", "contact_form"],
+        "sources": ["Press Gazette", "Wikipedia"]
+      },
+      "grants": {
+        "fields": ["name", "type", "focus_areas", "website", "contact_email", "application_process"],
+        "sources": ["Granttree", "UKRI", "Research England"]
+      },
+      "businesses": {
+        "fields": ["name", "address", "postcode", "website", "sector", "csr_email", "sustainability_email", "hr_email"],
+        "sources": ["Companies House", "FAME", "LinkedIn"]
+      }
+    }
+  }
+}

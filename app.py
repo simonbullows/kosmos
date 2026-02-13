@@ -9,12 +9,23 @@ st.set_page_config(page_title="KOSMOS CRM", layout="wide", page_icon="🔗")
 @st.cache_data
 def load_companies():
     url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/kosmos_csr_export.csv"
-    return pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    df = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    df['type'] = 'Company'
+    return df
 
-@st.cache_data  
+@st.cache_data
 def load_schools():
-    url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/schools_export.csv"
-    return pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    url = "https://raw.githubusercontent.com/simonbullows/kosmos/master/data/schools_full.csv"
+    df = pd.read_csv(io.StringIO(urllib.request.urlopen(url).read().decode('utf-8')))
+    df['type'] = 'School'
+    return df
+
+# Load data
+companies = load_companies()
+schools = load_schools()
+
+# Stats
+total = len(companies) + len(schools)
 
 # Tabs
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["🏢 Companies", "🏫 Schools", "❤️ Charities", "🏥 Healthcare", "🏛️ Government"])
@@ -22,8 +33,6 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["🏢 Companies", "🏫 Schools", "❤�
 # ===== COMPANIES =====
 with tab1:
     st.title("🏢 Companies")
-    
-    companies = load_companies()
     st.metric("Total Companies", f"{len(companies):,}")
     
     col1, col2 = st.columns([1, 3])
@@ -34,7 +43,6 @@ with tab1:
         town = st.selectbox("Town", ["All"] + sorted(companies['town'].dropna().unique().tolist()[:50]))
     
     with col2:
-        # Filter
         df = companies.copy()
         if search:
             df = df[df['name'].str.contains(search, case=False, na=False)]
@@ -45,13 +53,11 @@ with tab1:
         
         st.write(f"**{len(df):,} companies**")
         
-        # Select company
         if len(df) > 0:
             selected = st.selectbox("Select company", df['name'].unique()[:100])
             
             if selected:
                 c = df[df['name'] == selected].iloc[0]
-                
                 st.markdown("---")
                 st.subheader(c['name'])
                 
@@ -75,46 +81,58 @@ with tab1:
 # ===== SCHOOLS =====
 with tab2:
     st.title("🏫 Schools")
-    
-    schools = load_schools()
     st.metric("Total Schools", f"{len(schools):,}")
     
     col1, col2 = st.columns([1, 3])
     
     with col1:
         search = st.text_input("Search schools", key="sch_search")
-        school_type = st.selectbox("Type", ["All"] + sorted(schools['category'].dropna().unique().tolist()[:30]))
+        school_type = st.selectbox("Type", ["All"] + sorted(schools['type'].dropna().unique().tolist()))
         town_filter = st.selectbox("Town", ["All"] + sorted(schools['town'].dropna().unique().tolist()[:50]))
+        phase = st.selectbox("Phase", ["All"] + sorted(schools['phase'].dropna().unique().tolist()))
     
     with col2:
-        # Filter
         df = schools.copy()
         if search:
             df = df[df['name'].str.contains(search, case=False, na=False)]
         if school_type != "All":
-            df = df[df['category'] == school_type]
+            df = df[df['type'] == school_type]
         if town_filter != "All":
             df = df[df['town'] == town_filter]
+        if phase != "All":
+            df = df[df['phase'] == phase]
         
         st.write(f"**{len(df):,} schools**")
         
-        # Select school
         if len(df) > 0:
             selected = st.selectbox("Select school", df['name'].unique()[:100])
             
             if selected:
                 s = df[df['name'] == selected].iloc[0]
-                
                 st.markdown("---")
                 st.subheader(s['name'])
                 
+                # Key info
                 c1, c2, c3 = st.columns(3)
-                c1.write(f"**Type:** {s.get('category', 'N/A')}")
-                c2.write(f"**Town:** {s.get('town', 'N/A')}")
-                c3.write(f"**Postcode:** {s.get('postcode', 'N/A')}")
+                c1.write(f"**Type:** {s.get('type', 'N/A')}")
+                c2.write(f"**Phase:** {s.get('phase', 'N/A')}")
+                c3.write(f"**Status:** {s.get('status', 'N/A')}")
                 
+                # Address
                 c1, c2 = st.columns(2)
-                c1.write(f"**County:** {s.get('county', 'N/A')}")
+                addr = f"{s.get('street', '')}, {s.get('locality', '')}, {s.get('town', '')}, {s.get('county', '')} {s.get('postcode', '')}"
+                c1.write(f"**Address:** {addr}")
+                c2.write(f"**Constituency:** {s.get('constituency', 'N/A')}")
+                
+                # Contact
+                c1, c2, c3 = st.columns(3)
+                c1.write(f"**Website:** {s.get('website', 'N/A')}")
+                c2.write(f"**Phone:** {s.get('phone', 'N/A')}")
+                
+                # Headteacher
+                head = f"{s.get('head_title', '')} {s.get('head_first_name', '')} {s.get('head_last_name', '')}"
+                c1.write(f"**Headteacher:** {head}")
+                c2.write(f"**Role:** {s.get('head_job_title', 'N/A')}")
                 
                 # Actions
                 st.markdown("### Actions")
@@ -127,34 +145,34 @@ with tab2:
 # ===== CHARITIES =====
 with tab3:
     st.title("❤️ Charities")
-    st.info("⚠️ Charity data requires API access. See Settings for setup.")
+    st.info("⚠️ Upload charity data to add here")
     
-    # Placeholder for charity data
-    st.write("Register for Charity Commission API to load official charity data.")
+    st.write("""
+    **Required data format:**
+    - Charity name
+    - Registration number
+    - Address
+    - Phone/Email
+    - Trustees
+    """)
     
-    with st.expander("Setup Instructions"):
-        st.markdown("""
-        1. Go to: https://register-of-charity-commission.apps.gov.uk/
-        2. Register for API access (free)
-        3. Download full charity dataset
-        4. Upload CSV here
-        """)
+    st.file_uploader("Upload charity CSV", type="csv")
 
 # ===== HEALTHCARE =====
 with tab4:
     st.title("🏥 Healthcare")
-    st.info("⚠️ NHS data requires official sources.")
+    st.info("⚠️ Upload NHS/healthcare data")
     
     st.write("""
     **Data sources:**
-    - NHS Trusts: https://digital.nhs.uk/services/organisation-data
+    - NHS Digital: https://digital.nhs.uk/services/organisation-data
     - Care Quality Commission: https://www.cqc.org.uk
     """)
 
 # ===== GOVERNMENT =====
 with tab5:
     st.title("🏛️ Government")
-    st.info("⚠️ Government data requires official sources.")
+    st.info("⚠️ Upload government data")
     
     st.write("""
     **Data sources:**
@@ -166,21 +184,16 @@ with tab5:
 # Sidebar
 with st.sidebar:
     st.title("🔗 KOSMOS CRM")
-    st.metric("Total Contacts", f"{len(load_companies()) + len(load_schools()):,}")
-    
-    st.markdown("### Quick Links")
-    st.page_link("https://github.com/simonbullows/kosmos", label="GitHub Repo")
-    st.page_link("https://find-and-update.company-information.service.gov.uk", label="Companies House")
-    st.page_link("https://register-of-charity-commission.apps.gov.uk", label="Charity Commission")
+    st.metric("Total Contacts", f"{total:,}")
     
     st.markdown("### Data Status")
-    st.write("✅ Companies: 50K (from Companies House)")
-    st.write("✅ Schools: 30K (from UK School Data)")
-    st.write("❌ Charities: Need API access")
-    st.write("❌ Healthcare: Need NHS data")
-    st.write("❌ Government: Need official sources")
+    st.write(f"✅ Companies: {len(companies):,}")
+    st.write(f"✅ Schools: {len(schools):,}")
+    st.write("❌ Charities: Upload required")
+    st.write("❌ Healthcare: Upload required")
+    st.write("❌ Government: Upload required")
     
     st.markdown("### Upload Data")
     uploaded = st.file_uploader("Upload CSV", type="csv")
     if uploaded:
-        st.write("Upload processed - would need database update")
+        st.write("Upload received - needs processing")

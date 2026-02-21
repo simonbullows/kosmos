@@ -17,7 +17,7 @@
 - ✓ GDPR compliance flags (public contacts only)
 - ✓ Source URLs for verification
 - ✓ Ingestion timestamps
-- ✓ Universities: 94.6% coverage (procurement contacts)
+- ✓ Universities: 100% coverage (procurement contacts + emails)
 
 ### GitHub Backup
 🔗 https://github.com/simonbullows/kosmos

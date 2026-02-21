@@ -4,8 +4,7 @@ University of Abertay Dundee,https://www.abertay.ac.uk,University,Scotland,procu
 Aberystwyth University,https://www.aber.ac.uk,University,Wales,procurement@aber.ac.uk,1,https://www.sell2wales.gov.wales,employer_partnerships|graduates
 University of Bath,https://www.bath.ac.uk,University,England,procurement@bath.ac.uk,1,https://tenders.bath.ac.uk,employer_partnerships|graduates|research
 University of Birmingham,https://www.birmingham.ac.uk,University,England,finance@bham.ac.uk,1,https://in-tendhost.co.uk/universityofbirmingham,employer_partnerships|graduates|training
-University of Bolton,https://www.bolton.ac.uk,University,England,enquiries@bolton.ac.uk; enquiries@greatermanchester.ac.uk; procurement@bolton.ac.uk,3,,
-University of Bradford,https://www.bradford.ac.uk,University,England,enquiries@bradford.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates|research
+University of Bolton,https://www.bolton.ac.uk,University,England,enquiries@bolton.ac.uk; enquiries@greatermanchester.ac.uk; procurement@bolton.ac.uk,3,https://in-tendhost.co.uk/bolton,employer_partnerships|graduatesUniversity of Bradford,https://www.bradford.ac.uk,University,England,enquiries@bradford.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates|research
 University of Brighton,https://www.brighton.ac.uk,University,England,procurement@brighton.ac.uk,1,https://www.brighton.ac.uk/about-us/working-with-us/supplier-information,employer_partnerships|graduates
 University of Bristol,https://www.bristol.ac.uk,University,England,procurement@bristol.ac.uk,1,https://tenders.bris.ac.uk,employer_partnerships|graduates|research
 Brunel University London,https://www.brunel.ac.uk,University,England,press-office@brunel.ac.uk; hayley.jarvis@brunel.ac.uk; procurement@brunel.ac.uk,3,https://in-tendhost.co.uk/bruneluniversity,employer_partnerships|graduates
@@ -15,12 +14,10 @@ Canterbury Christ Church University,https://www.canterbury.ac.uk,University,Engl
 Cardiff University,https://www.cardiff.ac.uk,University,Wales,suppliers@cardiff.ac.uk,1,https://in-tendhost.co.uk/cardiffuniversity,employer_partnerships|graduates|research
 University of Central Lancashire,https://www.uclan.ac.uk,University,England,procurement@uclan.ac.uk,1,https://in-tendhost.co.uk/uclan,employer_partnerships|graduates
 University of Chester,https://www.chester.ac.uk,University,England,procurement@chester.ac.uk,1,https://in-tendhost.co.uk/chester,employer_partnerships|graduates
-University of Chichester,https://www.chi.ac.uk,University,England,help@chi.ac.uk; visitus@chi.ac.uk; studyhere@chi.ac.uk; procurement@chi.ac.uk,4,,
-City University of London,https://www.city.ac.uk,University,,procurement@city.ac.uk; alumni@city.ac.uk,2,,
-University of Coventry,https://www.coventry.ac.uk,University,England,ad7747@coventry.ac.uk; procurement@coventry.ac.uk,2,,employer_partnerships|graduates
+University of Chichester,https://www.chi.ac.uk,University,England,help@chi.ac.uk; visitus@chi.ac.uk; studyhere@chi.ac.uk; procurement@chi.ac.uk,4,https://in-tendhost.co.uk/universityofchichester,employer_partnerships|graduatesCity University of London,https://www.city.ac.uk,University,,procurement@city.ac.uk; alumni@city.ac.uk,2,,
+University of Coventry,https://www.coventry.ac.uk,University,England,ad7747@coventry.ac.uk; procurement@coventry.ac.uk,2,https://in-tendhost.co.uk/coventryuniversity,employer_partnerships|graduates
 University of Cranfield,https://www.cranfield.ac.uk,University,England,procurement@cranfield.ac.uk,1,,research|consulting
-University of Cumbria,https://www.cumbria.ac.uk,University,England,enquirycentre@cumbria.ac.uk; procurement@cumbria.ac.uk,2,,
-De Montfort University,https://www.dmu.ac.uk,University,England,procurement@dmu.ac.uk,1,https://in-tendhost.co.uk/demontfort/aspx/Home,employer_partnerships|graduates
+University of Cumbria,https://www.cumbria.ac.uk,University,England,enquirycentre@cumbria.ac.uk; procurement@cumbria.ac.uk,2,https://in-tendhost.co.uk/universityofcumbria,employer_partnerships|graduatesDe Montfort University,https://www.dmu.ac.uk,University,England,procurement@dmu.ac.uk,1,https://in-tendhost.co.uk/demontfort/aspx/Home,employer_partnerships|graduates
 University of Derby,https://www.derby.ac.uk,University,England,international@derby.ac.uk; askadmissions@derby.ac.uk; businessgateway@derby.ac.uk; security@derby.ac.uk; enquiriesUDB@derby.ac.uk; procurement@derby.ac.uk,6,https://neupc.delta-esourcing.com,employer_partnerships|graduates
 University of Dundee,https://www.dundee.ac.uk,University,Scotland,procurement@dundee.ac.uk,1,https://www.dundee.ac.uk/procurement/supplier-zone,employer_partnerships|graduates|research
 Durham University,https://www.durham.ac.uk,University,England,procurement@durham.ac.uk,1,https://www.durham.ac.uk/about-us/professional-services/procurement-services/tender-information/,employer_partnerships|graduates|research
@@ -31,7 +28,7 @@ University of Essex,https://www.essex.ac.uk,University,England,enquiries@essex.a
 University of Exeter,https://www.exeter.ac.uk,University,England,abuse@exeter.ac.uk; inbound@exeter.ac.uk; outbound@exeter.ac.uk; exeterao@exeter.ac.uk; accommodation@fxplus.ac.uk; procurement@exeter.ac.uk,6,https://in-tendhost.co.uk/universityofexeter,employer_partnerships|graduates|research
 University of Glasgow,https://www.gla.ac.uk,University,Scotland,med-sch-dental-ug@glasgow.ac.uk; med-sch-admissions@glasgow.ac.uk; vet-admissions@glasgow.ac.uk; shortcourses@glasgow.ac.uk; media@gla.ac.uk; procurement@gla.ac.uk,6,https://www.publiccontractsscotland.gov.uk,employer_partnerships|graduates|research
 University of Gloucestershire,https://www.glos.ac.uk,University,England,admissions@glos.ac.uk; procurement@glos.ac.uk,2,https://in-tendhost.co.uk/glos/aspx/Home,employer_partnerships|graduates
-University of Greenwich,https://www.gre.ac.uk,University,England,international@greenwich.ac.uk; postgraduateresearch_admissions@gre.ac.uk; studentcentre@gre.ac.uk; ah.accommodation@gre.ac.uk; gr.accommodation@gre.ac.uk; procurement@gre.ac.uk,6,,
+University of Greenwich,https://www.gre.ac.uk,University,England,international@greenwich.ac.uk; postgraduateresearch_admissions@gre.ac.uk; studentcentre@gre.ac.uk; ah.accommodation@gre.ac.uk; gr.accommodation@gre.ac.uk; procurement@gre.ac.uk,6,https://enterprise.gre.ac.uk/procurement,employer_partnerships|graduates
 Heriot-Watt University,https://www.hw.ac.uk,University,Scotland,N.Fegen@hw.ac.uk; m.conlon@hw.ac.uk; r.milcarz@hw.ac.uk; mediaenquiries@hw.ac.uk; icit@hw.ac.uk; procurement@hw.ac.uk,6,,
 University of Hertfordshire,https://www.herts.ac.uk,University,England,procurement@herts.ac.uk,1,https://in-tendhost.co.uk/universityofhertfordshire,employer_partnerships|graduates
 University of Huddersfield,https://www.hud.ac.uk,University,England,business@hud.ac.uk; webteam@hud.ac.uk; procurement@hud.ac.uk,3,https://neupc.delta-esourcing.com,employer_partnerships|graduates
@@ -53,8 +50,7 @@ University of Manchester,https://www.manchester.ac.uk,University,England,accommo
 Manchester Metropolitan University,https://www.mmu.ac.uk,University,England,accommodation@mmu.ac.uk; press@mmu.ac.uk; procurement@mmu.ac.uk,3,,employer_partnerships|graduates
 Middlesex University,https://www.mdx.ac.uk,University,England,procurement@mdx.ac.uk,1,https://in-tendhost.co.uk/mdx,employer_partnerships|graduates
 Newcastle University,https://www.ncl.ac.uk,University,England,procurement@ncl.ac.uk,1,https://www.ncl.ac.uk/work-with-us/procurement/tender/,employer_partnerships|graduates|research
-University of Northampton,https://www.northampton.ac.uk,University,England,study@northampton.ac.uk; international@northampton.ac.uk; SID@northampton.ac.uk; admissions@northampton.ac.uk; Abigail.Bligh@northampton.ac.uk; procurement@northampton.ac.uk,6,,
-Northumbria University,https://www.northumbria.ac.uk,University,England,procurement@northumbria.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates
+University of Northampton,https://www.northampton.ac.uk,University,England,study@northampton.ac.uk; international@northampton.ac.uk; SID@northampton.ac.uk; admissions@northampton.ac.uk; Abigail.Bligh@northampton.ac.uk; procurement@northampton.ac.uk,6,https://in-tendhost.co.uk/universityofnorthampton,employer_partnerships|graduatesNorthumbria University,https://www.northumbria.ac.uk,University,England,procurement@northumbria.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates
 University of Nottingham,https://www.nottingham.ac.uk,University,England,regs@nottingham.ac.uk; library-helpline@nottingham.ac.uk; estateshelpdesk@nottingham.ac.uk; procurement@nottingham.ac.uk,4,https://in-tendhost.co.uk/nottingham,employer_partnerships|graduates|research
 Nottingham Trent University,https://www.ntu.ac.uk,University,England,procurement@ntu.ac.uk,1,https://uk.eu-supply.com/login.asp?B=ntu,employer_partnerships|graduates
 University of Oxford,https://www.ox.ac.uk,University,England,procurement@ox.ac.uk,1,https://in-tendhost.co.uk/oxford,employer_partnerships|graduates|research|consulting
@@ -62,27 +58,25 @@ Oxford Brookes University,https://www.brookes.ac.uk,University,England,procureme
 University of Plymouth,https://www.plymouth.ac.uk,University,England,admissions@plymouth.ac.uk; uniaccommodation@plymouth.ac.uk; studentservices@plymouth.ac.uk; cardoffice@plymouth.ac.uk; graduation@plymouth.ac.uk; procurement@plymouth.ac.uk,6,https://www.mercell.com,employer_partnerships|graduates
 University of Portsmouth,https://www.port.ac.uk,University,England,info@port.ac.uk; careers@port.ac.uk; admissions@port.ac.uk; globaladmissions@port.ac.uk; student.housing@port.ac.uk; procurement@port.ac.uk,6,https://in-tendhost.co.uk/portsmouth,employer_partnerships|graduates
 Queen Mary University of London,https://www.qmul.ac.uk,University,England,procurement@qmul.ac.uk,1,https://lupc.bravosolution.co.uk/qmul/,employer_partnerships|graduates|research
-Queen's University Belfast,https://www.qub.ac.uk,University,Northern Ireland,procurement@qub.ac.uk,1,,
+Queen's University Belfast,https://www.qub.ac.uk,University,Northern Ireland,procurement@qub.ac.uk,1,https://in-tendhost.co.uk/queensuniversitybelfast,employer_partnerships|graduates|research
 University of Reading,https://www.reading.ac.uk,University,England,procurement@reading.ac.uk,1,https://reading.e-tendering.co.uk,employer_partnerships|graduates|research
-Robert Gordon University,https://www.rgu.ac.uk,University,Scotland,procurement@rgu.ac.uk,1,,
-University of Roehampton,https://www.roehampton.ac.uk,University,England,procurement@roehampton.ac.uk,1,,
-Royal Holloway University of London,https://www.royalholloway.ac.uk,University,England,procurement@royalholloway.ac.uk,1,,
+Robert Gordon University,https://www.rgu.ac.uk,University,Scotland,procurement@rgu.ac.uk,1,https://www.publiccontractsscotland.gov.uk,employer_partnerships|graduates
+University of Roehampton,https://www.roehampton.ac.uk,University,England,procurement@roehampton.ac.uk,1,https://in-tendhost.co.uk/universityofroehampton,employer_partnerships|graduates
+Royal Holloway University of London,https://www.royalholloway.ac.uk,University,England,procurement@royalholloway.ac.uk,1,https://uk.eu-supply.com/login.asp?B=RHUL,employer_partnerships|graduates
 University of Salford,https://www.salford.ac.uk,University,England,askus@salford.ac.uk; procurement@salford.ac.uk,2,https://in-tendhost.co.uk/salford,employer_partnerships|graduates
 University of Sheffield,https://www.sheffield.ac.uk,University,England,procurement@sheffield.ac.uk,1,https://in-tendhost.co.uk/sheffield,employer_partnerships|graduates|research
-Sheffield Hallam University,https://www.shu.ac.uk,University,England,enquiries@shu.ac.uk; business@shu.ac.uk; procurement@shu.ac.uk,3,,employer_partnerships|graduates
+Sheffield Hallam University,https://www.shu.ac.uk,University,England,enquiries@shu.ac.uk; business@shu.ac.uk; procurement@shu.ac.uk,3,https://in-tendhost.co.uk/sheffieldhallamuniversity/,employer_partnerships|graduates
 University of Southampton,https://www.southampton.ac.uk,University,England,ssc@soton.ac.uk; enquiries@southampton.ac.uk; studenthub@soton.ac.uk; international@southampton.ac.uk; partnerships@southampton.ac.uk; procurement@soton.ac.uk,6,https://in-tendhost.co.uk/universityofsouthampton,employer_partnerships|graduates|research
-University of South Wales,https://www.southwales.ac.uk,University,Wales,procurement@southwales.ac.uk; uswcommercial@southwales.ac.uk,2,,
-University of St Andrews,https://www.st-andrews.ac.uk,University,Scotland,procurement@st-andrews.ac.uk,1,https://in-tendhost.co.uk/universityofstandrews,employer_partnerships|graduates|research
-University of Stirling,https://www.stir.ac.uk,University,Scotland,recruitment@stir.ac.uk; admissions@stir.ac.uk; postgraduate.admissions@stir.ac.uk; international@stir.ac.uk; procurement@stir.ac.uk,5,,
+University of South Wales,https://www.southwales.ac.uk,University,Wales,procurement@southwales.ac.uk; uswcommercial@southwales.ac.uk,2,https://www.sell2wales.gov.wales/search/Search_AuthProfile.aspx?ID=AA0315,employer_partnerships|graduatesUniversity of St Andrews,https://www.st-andrews.ac.uk,University,Scotland,procurement@st-andrews.ac.uk,1,https://in-tendhost.co.uk/universityofstandrews,employer_partnerships|graduates|research
+University of Stirling,https://www.stir.ac.uk,University,Scotland,recruitment@stir.ac.uk; admissions@stir.ac.uk; postgraduate.admissions@stir.ac.uk; international@stir.ac.uk; procurement@stir.ac.uk,5,https://www.publiccontractsscotland.gov.uk,employer_partnerships|graduates|research
 University of Strathclyde,https://www.strath.ac.uk,University,Scotland,procurement@strath.ac.uk,1,https://www.strath.ac.uk/procurement,employer_partnerships|graduates|research
 University of Sunderland,https://www.sunderland.ac.uk,University,England,procurement@sunderland.ac.uk,1,https://in-tendhost.co.uk/sunderland,employer_partnerships|graduates
 University of Surrey,https://www.surrey.ac.uk,University,England,d.erkal@surrey.ac.uk; procurement@surrey.ac.uk,2,https://in-tendhost.co.uk/universityofsurrey,employer_partnerships|graduates|research
 University of Sussex,https://www.sussex.ac.uk,University,England,information@sussex.ac.uk,1,,
-Swansea University,https://www.swansea.ac.uk,University,Wales,procurement@swansea.ac.uk; supplierenquiries@swansea.ac.uk,2,,
+Swansea University,https://www.swansea.ac.uk,University,Wales,procurement@swansea.ac.uk; supplierenquiries@swansea.ac.uk,2,https://www.sell2wales.gov.wales/search/Search_AuthProfile.aspx?ID=AA0345,employer_partnerships|graduates|research
 Teesside University,https://www.tees.ac.uk,University,England,enquiries@tees.ac.uk; london-enquiries@tees.ac.uk; procurement@tees.ac.uk,3,https://neupc.delta-esourcing.com,employer_partnerships|graduates
-University of Ulster,https://www.ulster.ac.uk,University,Northern Ireland,procurement@ulster.ac.uk,1,,
-University of Wales Trinity Saint David,https://www.uwtsd.ac.uk,University,Wales,procurement@uwtsd.ac.uk,1,,
-University of Warwick,https://warwick.ac.uk,University,England,webmaster@warwick.ac.uk; press@warwick.ac.uk; conferences@warwick.ac.uk; more-info@uwsp.co.uk; accommodation@warwick.ac.uk; procurement@warwick.ac.uk,6,https://in-tendhost.co.uk/universityofwarwick,employer_partnerships|graduates|research|consulting
+University of Ulster,https://www.ulster.ac.uk,University,Northern Ireland,procurement@ulster.ac.uk,1,https://e-sourcingni.bravosolution.co.uk,employer_partnerships|graduates
+University of Wales Trinity Saint David,https://www.uwtsd.ac.uk,University,Wales,procurement@uwtsd.ac.uk,1,https://www.sell2wales.gov.wales/search/Search_AuthProfile.aspx?ID=AA0343,employer_partnerships|graduatesUniversity of Warwick,https://warwick.ac.uk,University,England,webmaster@warwick.ac.uk; press@warwick.ac.uk; conferences@warwick.ac.uk; more-info@uwsp.co.uk; accommodation@warwick.ac.uk; procurement@warwick.ac.uk,6,https://in-tendhost.co.uk/universityofwarwick,employer_partnerships|graduates|research|consulting
 University of West England,https://www.uwe.ac.uk,University,England,infopoint@uwe.ac.uk; procurement@uwe.ac.uk,2,,
 University of West London,https://www.uwl.ac.uk,University,England,courses@uwl.ac.uk; procurement@uwl.ac.uk,2,,
 University of Westminster,https://www.westminster.ac.uk,University,England,procurement@westminster.ac.uk,1,https://www.westminster.ac.uk/business-services/becoming-a-supplier,employer_partnerships|graduates

@@ -1,5 +1,5 @@
-name,website,type,region,emails,email_count,procurement_portal,services_fit
-University of Aberdeen,https://www.abdn.ac.uk,University,Scotland,infohub@abdn.ac.uk,1,https://www.publiccontractsscotland.gov.uk/search/Search_AuthProfile.aspx?ID=AA00102,employer_partnerships|graduates|research
+name,website,type,region,emails,email_count,procurement_portal,services_fit,procurement_phone,key_contacts
+University of Aberdeen,https://www.abdn.ac.uk,University,Scotland,infohub@abdn.ac.uk,1,https://www.publiccontractsscotland.gov.uk/search/Search_AuthProfile.aspx?ID=AA00102,employer_partnerships|graduates|research,
 University of Abertay Dundee,https://www.abertay.ac.uk,University,Scotland,procurement@abertay.ac.uk,1,https://www.publiccontractsscotland.gov.uk,employer_partnerships|graduates
 Aberystwyth University,https://www.aber.ac.uk,University,Wales,procurement@aber.ac.uk,1,https://www.sell2wales.gov.wales,employer_partnerships|graduates
 University of Bath,https://www.bath.ac.uk,University,England,procurement@bath.ac.uk,1,https://tenders.bath.ac.uk,employer_partnerships|graduates|research
@@ -7,7 +7,7 @@ University of Birmingham,https://www.birmingham.ac.uk,University,England,finance
 University of Bolton,https://www.bolton.ac.uk,University,England,enquiries@bolton.ac.uk; enquiries@greatermanchester.ac.uk; procurement@bolton.ac.uk,3,https://in-tendhost.co.uk/bolton,employer_partnerships|graduates
 University of Bradford,https://www.bradford.ac.uk,University,England,enquiries@bradford.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates|research
 University of Brighton,https://www.brighton.ac.uk,University,England,procurement@brighton.ac.uk,1,https://www.brighton.ac.uk/about-us/working-with-us/supplier-information,employer_partnerships|graduates
-University of Bristol,https://www.bristol.ac.uk,University,England,procurement@bristol.ac.uk,1,https://tenders.bris.ac.uk,employer_partnerships|graduates|research
+University of Bristol,https://www.bristol.ac.uk,University,England,procurement@bristol.ac.uk,1,https://tenders.bris.ac.uk,employer_partnerships|graduates|research,+44 117 42 82690,"Rob Logan (Director), Richard Lafferty (Senior Manager), Stephen Davies (Senior Manager)"
 Brunel University London,https://www.brunel.ac.uk,University,England,press-office@brunel.ac.uk; hayley.jarvis@brunel.ac.uk; procurement@brunel.ac.uk,3,https://in-tendhost.co.uk/bruneluniversity,employer_partnerships|graduates
 University of Buckingham,https://www.buckingham.ac.uk,University,England,info@buckingham.ac.uk; procurement@buckingham.ac.uk,2,Direct contact (Estates: estates@buckingham.ac.uk),employer_partnerships|graduates
 University of Cambridge,https://www.cam.ac.uk,University,England,procurement@cam.ac.uk,1,https://www.procurement.admin.cam.ac.uk/supplier-portal,employer_partnerships|graduates|research
@@ -36,7 +36,7 @@ Heriot-Watt University,https://www.hw.ac.uk,University,Scotland,N.Fegen@hw.ac.uk
 University of Hertfordshire,https://www.herts.ac.uk,University,England,procurement@herts.ac.uk,1,https://in-tendhost.co.uk/universityofhertfordshire,employer_partnerships|graduates
 University of Huddersfield,https://www.hud.ac.uk,University,England,business@hud.ac.uk; webteam@hud.ac.uk; procurement@hud.ac.uk,3,https://neupc.delta-esourcing.com,employer_partnerships|graduates
 University of Hull,https://www.hull.ac.uk,University,England,procurement@hull.ac.uk,1,https://www.hull.ac.uk/work-with-us/more/supplying-our-university/procurement,employer_partnerships|graduates
-Imperial College London,https://www.imperial.ac.uk,University,England,procurement@imperial.ac.uk,1,https://www.imperial.ac.uk/finance/purchasing/,employer_partnerships|graduates|research|consulting
+Imperial College London,https://www.imperial.ac.uk,University,England,procurement@imperial.ac.uk; p.referrals@imperial.ac.uk,2,https://www.imperial.ac.uk/finance/purchasing/,employer_partnerships|graduates|research|consulting,
 Keele University,https://www.keele.ac.uk,University,England,procurement@keele.ac.uk,1,https://www.keele.ac.uk/finance/procurement/,employer_partnerships|graduates|research
 University of Kent,https://www.kent.ac.uk,University,England,study@kent.ac.uk; accomm@kent.ac.uk; alumni-office@kent.ac.uk; alumni@kent.ac.uk; appeals@kent.ac.uk; procurement@kent.ac.uk,6,https://uk.eu-supply.com/login.asp?B=UniversityKent,employer_partnerships|graduates
 King's College London,https://www.kcl.ac.uk,University,England,procurement@kcl.ac.uk,1,https://www.kcl.ac.uk/procurement,employer_partnerships|graduates|research
@@ -57,7 +57,7 @@ University of Northampton,https://www.northampton.ac.uk,University,England,study
 Northumbria University,https://www.northumbria.ac.uk,University,England,procurement@northumbria.ac.uk,1,https://neupc.delta-esourcing.com,employer_partnerships|graduates
 University of Nottingham,https://www.nottingham.ac.uk,University,England,regs@nottingham.ac.uk; library-helpline@nottingham.ac.uk; estateshelpdesk@nottingham.ac.uk; procurement@nottingham.ac.uk,4,https://in-tendhost.co.uk/nottingham,employer_partnerships|graduates|research
 Nottingham Trent University,https://www.ntu.ac.uk,University,England,procurement@ntu.ac.uk,1,https://uk.eu-supply.com/login.asp?B=ntu,employer_partnerships|graduates
-University of Oxford,https://www.ox.ac.uk,University,England,procurement@ox.ac.uk,1,https://in-tendhost.co.uk/oxford,employer_partnerships|graduates|research|consulting
+University of Oxford,https://www.ox.ac.uk,University,England,procurement@ox.ac.uk,1,https://in-tendhost.co.uk/oxford,employer_partnerships|graduates|research|consulting,+44 1865 6XXXX,"Procurement Team (procurement@ox.ac.uk)"
 Oxford Brookes University,https://www.brookes.ac.uk,University,England,procurement@brookes.ac.uk,1,https://uk.eu-supply.com/login.asp?B=OxfordBrookes,employer_partnerships|graduates
 University of Plymouth,https://www.plymouth.ac.uk,University,England,admissions@plymouth.ac.uk; uniaccommodation@plymouth.ac.uk; studentservices@plymouth.ac.uk; cardoffice@plymouth.ac.uk; graduation@plymouth.ac.uk; procurement@plymouth.ac.uk,6,https://www.mercell.com,employer_partnerships|graduates
 University of Portsmouth,https://www.port.ac.uk,University,England,info@port.ac.uk; careers@port.ac.uk; admissions@port.ac.uk; globaladmissions@port.ac.uk; student.housing@port.ac.uk; procurement@port.ac.uk,6,https://in-tendhost.co.uk/portsmouth,employer_partnerships|graduates

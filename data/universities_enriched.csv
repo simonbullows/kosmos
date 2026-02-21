@@ -16,8 +16,8 @@ Cardiff University,https://www.cardiff.ac.uk,University,Wales,suppliers@cardiff.
 University of Central Lancashire,https://www.uclan.ac.uk,University,England,procurement@uclan.ac.uk,1
 University of Chester,https://www.chester.ac.uk,University,England,procurement@chester.ac.uk,1
 University of Chichester,https://www.chi.ac.uk,University,England,help@chi.ac.uk; visitus@chi.ac.uk; studyhere@chi.ac.uk; procurement@chi.ac.uk,4
-City, University of London,https://www.city.ac.uk,University,,0
-University of Coventry,https://www.coventry.ac.uk,University,England,,0
+City, University of London,https://www.city.ac.uk,University,,procurement@city.ac.uk; alumni@city.ac.uk,2
+University of Coventry,https://www.coventry.ac.uk,University,England,ad7747@coventry.ac.uk; procurement@coventry.ac.uk,2
 University of Cranfield,https://www.cranfield.ac.uk,University,England,procurement@cranfield.ac.uk,1
 University of Cumbria,https://www.cumbria.ac.uk,University,England,enquirycentre@cumbria.ac.uk; procurement@cumbria.ac.uk,2
 De Montfort University,https://www.dmu.ac.uk,University,England,procurement@dmu.ac.uk,1
@@ -71,14 +71,14 @@ University of Salford,https://www.salford.ac.uk,University,England,askus@salford
 University of Sheffield,https://www.sheffield.ac.uk,University,England,procurement@sheffield.ac.uk,1
 Sheffield Hallam University,https://www.shu.ac.uk,University,England,enquiries@shu.ac.uk; business@shu.ac.uk; procurement@shu.ac.uk,3
 University of Southampton,https://www.southampton.ac.uk,University,England,ssc@soton.ac.uk; enquiries@southampton.ac.uk; studenthub@soton.ac.uk; international@southampton.ac.uk; partnerships@southampton.ac.uk; procurement@soton.ac.uk,6
-University of South Wales,https://www.southwales.ac.uk,University,Wales,,0
-University of St Andrews,https://www.st-andrews.ac.uk,University,Scotland,,0
+University of South Wales,https://www.southwales.ac.uk,University,Wales,procurement@southwales.ac.uk; uswcommercial@southwales.ac.uk,2
+ University of St Andrews,https://www.st-andrews.ac.uk,University,Scotland,procurement@st-andrews.ac.uk,1
 University of Stirling,https://www.stir.ac.uk,University,Scotland,recruitment@stir.ac.uk; admissions@stir.ac.uk; postgraduate.admissions@stir.ac.uk; international@stir.ac.uk; procurement@stir.ac.uk,5
 University of Strathclyde,https://www.strath.ac.uk,University,Scotland,procurement@strath.ac.uk,1
 University of Sunderland,https://www.sunderland.ac.uk,University,England,procurement@sunderland.ac.uk,1
 University of Surrey,https://www.surrey.ac.uk,University,England,d.erkal@surrey.ac.uk; procurement@surrey.ac.uk,2
 University of Sussex,https://www.sussex.ac.uk,University,England,information@sussex.ac.uk,1
- Swansea University,https://www.swansea.ac.uk,University,Wales,,0
+ Swansea University,https://www.swansea.ac.uk,University,Wales,procurement@swansea.ac.uk; supplierenquiries@swansea.ac.uk,2
 Teesside University,https://www.tees.ac.uk,University,England,enquiries@tees.ac.uk; london-enquiries@tees.ac.uk; procurement@tees.ac.uk,3
 University of Ulster,https://www.ulster.ac.uk,University,Northern Ireland,procurement@ulster.ac.uk,1
 University of Wales Trinity Saint David,https://www.uwtsd.ac.uk,University,Wales,procurement@uwtsd.ac.uk,1

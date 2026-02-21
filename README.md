@@ -7,8 +7,9 @@
 | Category | Count | Source |
 |----------|--------|--------|
 | **Companies** | 70,000 | Companies House (free bulk download) |
-| **Education** | 30,090 | UK School Data (GitHub) |
-| **TOTAL** | **100,090** | |
+| **Schools** | 30,090 | UK School Data (GitHub) |
+| **Universities** | 92 | UK Universities (procurement contacts) |
+| **TOTAL** | **100,182** | |
 
 ### Data Quality
 - ✓ All records have provenance tracking
@@ -16,6 +17,7 @@
 - ✓ GDPR compliance flags (public contacts only)
 - ✓ Source URLs for verification
 - ✓ Ingestion timestamps
+- ✓ Universities: 94.6% coverage (procurement contacts)
 
 ### GitHub Backup
 🔗 https://github.com/simonbullows/kosmos

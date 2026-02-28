@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Job Board Scraper for Become Inspired
-Uses SearXNG for free unlimited search
+Cross-platform: works on Windows, Mac, Linux
 """
 import json
 import os
@@ -9,7 +9,12 @@ import asyncio
 from datetime import datetime
 from typing import List, Dict, Any
 
-SEARXNG_URL = "http://localhost:8080"
+# Cross-platform paths
+SEARXNG_URL = os.environ.get("SEARXNG_URL", "http://localhost:8080")
+
+# Jobs board directory (relative to repo root)
+JOBS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)))
+JOBS_FILE = os.path.join(JOBS_DIR, "jobs.json")
 
 def generate_job_id(category: str, index: int) -> str:
     prefix = {"content_moderation": "CM", "ai_training": "AI", "multimedia_design": "MD", "education": "ED"}
@@ -40,7 +45,7 @@ async def search_searxng(query: str, engines: str = "google,bing", num: int = 15
 
 async def run_full_scan():
     """Run a comprehensive job scan"""
-    print("🔍 Starting job scan via SearXNG...")
+    print("Starting job scan via SearXNG...")
     
     queries = [
         "content moderator remote UK indeed",
@@ -68,7 +73,7 @@ async def run_full_scan():
             seen_urls.add(url)
             unique_jobs.append(job)
     
-    print(f"📊 Found {len(unique_jobs)} unique jobs")
+    print(f"Found {len(unique_jobs)} unique jobs")
     return unique_jobs
 
 def categorize_job(job: Dict) -> str:
@@ -99,10 +104,8 @@ def match_for_candidate(job: Dict) -> List[str]:
 
 def update_jobs_board(new_jobs: List[Dict]):
     """Update jobs.json"""
-    jobs_file = "/home/ubuntu/.openclaw/workspace/jobs-board/jobs.json"
-    
-    if os.path.exists(jobs_file):
-        with open(jobs_file, "r") as f:
+    if os.path.exists(JOBS_FILE):
+        with open(JOBS_FILE, "r") as f:
             board = json.load(f)
     else:
         board = {"jobs_board": {"categories": {}, "candidates": {}}}
@@ -155,10 +158,10 @@ def update_jobs_board(new_jobs: List[Dict]):
         board["jobs_board"]["categories"][category].append(new_job)
         added += 1
     
-    with open(jobs_file, "w") as f:
+    with open(JOBS_FILE, "w") as f:
         json.dump(board, f, indent=2)
     
-    print(f"✅ Added {added} new jobs to board")
+    print(f"Added {added} new jobs to board")
 
 async def main():
     import sys
@@ -166,10 +169,10 @@ async def main():
     if len(sys.argv) > 1 and sys.argv[1] == "scan":
         jobs = await run_full_scan()
         update_jobs_board(jobs)
-        print("🎉 Scan complete!")
+        print("Scan complete!")
     else:
-        print("Job Board Scraper (SearXNG)")
-        print("Usage: python3 scraper.py scan")
+        print("Job Board Scraper (Cross-platform)")
+        print("Usage: python scraper.py scan")
         print("  scan - Run job scan via local SearXNG")
 
 if __name__ == "__main__":

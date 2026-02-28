@@ -1,7 +1,6 @@
-# Become Inspired Jobs Board
+# Become Inspired Jobs Board (Windows Compatible)
 
 **Created:** 2026-02-28
-**Purpose:** Internal job board for matching candidates to suitable remote/UK roles
 
 ---
 
@@ -19,7 +18,7 @@
 
 ## Top Picks for Multimedia Candidate
 
-### 🟢 High Priority (Best Match)
+### High Priority (Best Match)
 
 | ID | Role | Company | Rate | Location |
 |----|------|---------|------|----------|
@@ -30,40 +29,31 @@
 | MD002 | Visual Content Designer | Fiverr | - | Remote |
 | MD003 | Junior Multimedia Designer | 99designs | - | Remote |
 | MD005 | Children's Content Designer | CBeebies | - | London |
-| MD010 | Content Creator | National Geographic | - | London |
 
 ---
 
-## Categories
+## Running the Scraper on Windows
 
-1. [Content Moderation](#content-moderation) - 30 jobs
-2. [AI Training/Evaluation](#ai-trainingevaluation) - 20 jobs
-3. [Multimedia Design](#multimedia-design) - 15 jobs
-4. [Education](#education) - 6 jobs
+The scraper needs Python. Install from: https://www.python.org/downloads/
 
----
-
-## Usage
-
-### Add More Jobs
-Edit `jobs-board/jobs.json` directly or ask Jeeves to add jobs.
-
-### Run Job Scan (when APIs available)
-```bash
-python3 jobs-board/scraper/scraper.py scan
+Then run:
+```cmd
+pip install httpx aiofiles
+python jobs-board\scraper\scraper.py scan
 ```
 
-### Match Candidates
-Jobs have `suitable_for` field showing which candidates they match.
+Or use the provided batch file:
+```cmd
+jobs-board\scraper\run-scan.bat
+```
 
 ---
 
-## Status Legend
+## Files
 
-- 🔴 Not Applied
-- 🟡 Applied
-- 🟢 Interview
-- ✅ Hired
+- `jobs.json` - All jobs data (137 roles)
+- `scraper\scraper.py` - Job scraper script
+- `scraper\run-scan.bat` - Windows batch file to run scan
 
 ---
 

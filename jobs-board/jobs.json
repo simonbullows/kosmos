@@ -1,0 +1,1603 @@
+{
+  "jobs_board": {
+    "created": "2026-02-28",
+    "updated": "2026-02-28",
+    "description": "Internal job board for Become Inspired candidates",
+    "categories": {
+      "content_moderation": [
+        {
+          "id": "CM001",
+          "role": "Content Review Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM002",
+          "role": "Response Quality Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM003",
+          "role": "Data Annotator",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM004",
+          "role": "Image Quality Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$25/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "CM005",
+          "role": "Image Review & QA Specialist",
+          "company": "Crossing Hurdles",
+          "rate": "$25/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "CM006",
+          "role": "Data Quality Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM007",
+          "role": "Data Labeling Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM008",
+          "role": "LLM - AI Quality Analyst",
+          "company": "Crossing Hurdles",
+          "rate": "$11/hr",
+          "location": "Remote UK",
+          "url": "crossinghurdles.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM009",
+          "role": "Senior Specialist, Content Moderation",
+          "company": "Depop",
+          "rate": null,
+          "location": "London",
+          "url": "depop.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM010",
+          "role": "Head of Content Operations",
+          "company": "Yoto",
+          "rate": null,
+          "location": "London",
+          "url": "yoto.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM011",
+          "role": "Community Moderator",
+          "company": "Darktrace",
+          "rate": null,
+          "location": "London",
+          "url": "darktrace.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM012",
+          "role": "Compliance & Safety Specialist",
+          "company": "DuckDuckGo",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "duckduckgo.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM013",
+          "role": "EMEA Moderation QA Specialist",
+          "company": "TikTok Shop",
+          "rate": null,
+          "location": "London",
+          "url": "tiktok.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM014",
+          "role": "Director of Player Safety",
+          "company": "Scopely",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "scopely.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM015",
+          "role": "Content Moderation Specialist",
+          "company": "Telus Digital",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "jobs.telusdigital.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM016",
+          "role": "Media Search Analyst",
+          "company": "Telus Digital",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "jobs.telusdigital.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM017",
+          "role": "Content Moderator",
+          "company": "Accenture",
+          "rate": null,
+          "location": "London",
+          "url": "accenture.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM018",
+          "role": "Trust & Safety Analyst",
+          "company": "Meta",
+          "rate": null,
+          "location": "London",
+          "url": "meta.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM019",
+          "role": "Junior Content Moderator",
+          "company": "Citi",
+          "rate": null,
+          "location": "London",
+          "url": "citi.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM020",
+          "role": "Online Safety Investigator",
+          "company": "Ofcom",
+          "rate": null,
+          "location": "London/Rhondda",
+          "url": "ofcom.org.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM021",
+          "role": "Content Policy Manager",
+          "company": "Snap Inc",
+          "rate": null,
+          "location": "London",
+          "url": "snap.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM022",
+          "role": "User Generated Content Reviewer",
+          "company": "Pinterest",
+          "rate": null,
+          "location": "London",
+          "url": "pinterest.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM023",
+          "role": "Trust & Safety Specialist",
+          "company": "Twitch",
+          "rate": null,
+          "location": "London",
+          "url": "twitch.tv/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM024",
+          "role": "Content Review Lead",
+          "company": "Bumble",
+          "rate": null,
+          "location": "London",
+          "url": "bumble.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM025",
+          "role": "Safety Operations Analyst",
+          "company": "Just Eat",
+          "rate": null,
+          "location": "London",
+          "url": "just-eat.co.uk/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM026",
+          "role": "Image Moderator",
+          "company": "OpenAI",
+          "rate": null,
+          "location": "Remote",
+          "url": "openai.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "CM027",
+          "role": "Content Quality Associate",
+          "company": "TaskRabbit",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "taskrabbit.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "CM028",
+          "role": "Game Moderator",
+          "company": "Riot Games",
+          "rate": null,
+          "location": "Dublin",
+          "url": "riotgames.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM029",
+          "role": "Appeals Moderator",
+          "company": "Reddit",
+          "rate": null,
+          "location": "London",
+          "url": "reddit.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM030",
+          "role": "Junior Content Operations",
+          "company": "Revolut",
+          "rate": null,
+          "location": "London",
+          "url": "revolut.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "CM031",
+          "role": "Flexible Remote Content Moderator Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-remote-content-moderator-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358649"
+        },
+        {
+          "id": "CM032",
+          "role": "Content Moderator Work, jobs (with Salaries)",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-content-moderator-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358689"
+        },
+        {
+          "id": "CM033",
+          "role": "Content Moderator English jobs in Remote",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-content-moderator-english-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358702"
+        },
+        {
+          "id": "CM034",
+          "role": "Remote Content Moderator jobs in London",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-remote-content-moderator-l-london-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358730"
+        },
+        {
+          "id": "CM035",
+          "role": "Flexible Content Moderator Remote No Experience Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-content-moderator-remote-no-experience-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358742"
+        },
+        {
+          "id": "CM036",
+          "role": "Work From Home Content Moderator jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-work-from-home-content-moderator-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358750"
+        },
+        {
+          "id": "CM037",
+          "role": "english content moderator jobs in remote",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-english-content-moderator-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358758"
+        },
+        {
+          "id": "CM038",
+          "role": "online content moderator in remote jobs in london",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-online-content-moderator-in-remote-l-london-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358768"
+        },
+        {
+          "id": "CM039",
+          "role": "Crossing Hurdles hiring Image Quality Analyst | $25/hr Remote in Canada",
+          "company": "ca.linkedin.com",
+          "location": "Remote/UK",
+          "url": "https://ca.linkedin.com/jobs/view/image-quality-analyst-%2425-hr-remote-at-crossing-hurdles-4377684117",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358929"
+        },
+        {
+          "id": "CM040",
+          "role": "Urgent! Image reviewer jobs in Remote",
+          "company": "jooble.org",
+          "location": "Remote/UK",
+          "url": "https://jooble.org/jobs-image-reviewer/Remote",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358941"
+        },
+        {
+          "id": "CM041",
+          "role": "$28-$186/hr Remote Image Reviewer Jobs (NOW HIRING) Feb 2026",
+          "company": "www.ziprecruiter.com",
+          "location": "Remote/UK",
+          "url": "https://www.ziprecruiter.com/Jobs/Remote-Image-Reviewer",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358952"
+        },
+        {
+          "id": "CM042",
+          "role": "20 Best image review jobs in remote (Hiring Now!)",
+          "company": "www.simplyhired.com",
+          "location": "Remote/UK",
+          "url": "https://www.simplyhired.com/search?q=image+review&l=remote",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358963"
+        },
+        {
+          "id": "CM043",
+          "role": "Image Reviewer jobs in Remote",
+          "company": "www.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://www.indeed.com/q-image-reviewer-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358975"
+        },
+        {
+          "id": "CM044",
+          "role": "11 Image Review Analyst (Power Line) Jobs in United States, February 2026",
+          "company": "www.glassdoor.com",
+          "location": "Remote/UK",
+          "url": "https://www.glassdoor.com/Job/jobs.htm?sc.occupationParam=Image+Review+Analyst+%28Power+Line%29&sc.locationSeoString=United+States&locId=1&locT=N",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358987"
+        },
+        {
+          "id": "CM045",
+          "role": "Content reviewer jobs abroad for language speakers",
+          "company": "www.europelanguagejobs.com",
+          "location": "Remote/UK",
+          "url": "https://www.europelanguagejobs.com/jobs-with-content-reviewer",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358997"
+        },
+        {
+          "id": "CM046",
+          "role": "Image Reviewer Jobs",
+          "company": "www.naukri.com",
+          "location": "Remote/UK",
+          "url": "https://www.naukri.com/image-reviewer-jobs",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359011"
+        }
+      ],
+      "ai_training": [
+        {
+          "id": "AI001",
+          "role": "AI Training Specialist",
+          "company": "Prolific",
+          "rate": null,
+          "location": "Manchester",
+          "url": "jobs.prolific.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI002",
+          "role": "AI Training Specialist",
+          "company": "Prolific",
+          "rate": null,
+          "location": "London",
+          "url": "jobs.prolific.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI003",
+          "role": "AI Trainer - Psychologists",
+          "company": "Prolific",
+          "rate": null,
+          "location": "London",
+          "url": "jobs.prolific.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI004",
+          "role": "AI Training Experts",
+          "company": "Prolific",
+          "rate": null,
+          "location": "London",
+          "url": "jobs.prolific.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI005",
+          "role": "AI Trainer - Python Devs",
+          "company": "Prolific",
+          "rate": null,
+          "location": "London",
+          "url": "jobs.prolific.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI006",
+          "role": "AI Training Specialist",
+          "company": "Alignerr",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "alignerr.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI007",
+          "role": "AI Solutions Consultant",
+          "company": "KPMG UK",
+          "rate": null,
+          "location": "London",
+          "url": "careers.kpmg.co.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI008",
+          "role": "Junior AI Consultant",
+          "company": "Wanstor",
+          "rate": null,
+          "location": "London",
+          "url": "wanstor.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI009",
+          "role": "Search Engine Evaluator",
+          "company": "Appen",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "appen.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI010",
+          "role": "AI Data Rater",
+          "company": "Appen",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "appen.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI011",
+          "role": "AI Trainer",
+          "company": "Scale AI",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "scale.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI012",
+          "role": "TrainAI Data Services",
+          "company": "RWS",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "rws.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI013",
+          "role": "AI Evaluation Specialist",
+          "company": "DeepMind",
+          "rate": null,
+          "location": "London",
+          "url": "deepmind.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI014",
+          "role": "Data Collection Specialist",
+          "company": "Tessella",
+          "rate": null,
+          "location": "London",
+          "url": "tessella.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI015",
+          "role": "Junior AI Trainer",
+          "company": "Centrica",
+          "rate": null,
+          "location": "London",
+          "url": "centrica.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI016",
+          "role": "NLP Data Annotator",
+          "company": "Labelbox",
+          "rate": null,
+          "location": "Remote",
+          "url": "labelbox.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI017",
+          "role": "AI Content Reviewer",
+          "company": "Anthropic",
+          "rate": null,
+          "location": "Remote",
+          "url": "anthropic.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI018",
+          "role": "Machine Learning Tutor",
+          "company": "Outschool",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "outschool.com/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI019",
+          "role": "AI Grader",
+          "company": "Khan Academy",
+          "rate": null,
+          "location": "Remote",
+          "url": "khanacademy.org/careers",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "AI020",
+          "role": "Data Labeller",
+          "company": " TELUS International",
+          "rate": "$14/hr",
+          "location": "Remote UK",
+          "url": "telusinternational.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "AI021",
+          "role": "Join Now | AI Training & Data Labeling Jobs From 20+ Platforms",
+          "company": "www.opentrain.ai",
+          "location": "Remote/UK",
+          "url": "https://www.opentrain.ai/become-freelancer/",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.358895"
+        },
+        {
+          "id": "AI022",
+          "role": "1000+ Data Annotation jobs in United Kingdom (125 new)",
+          "company": "uk.linkedin.com",
+          "location": "Remote/UK",
+          "url": "https://uk.linkedin.com/jobs/data-annotation-jobs",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359066"
+        },
+        {
+          "id": "AI023",
+          "role": "data annotation jobs in united kingdom",
+          "company": "www.simplyhired.co.uk",
+          "location": "Remote/UK",
+          "url": "https://www.simplyhired.co.uk/search?q=data+annotation&l=united+kingdom",
+          "status": "not_applied",
+          "suitable_for": [],
+          "priority": "normal",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359080"
+        }
+      ],
+      "multimedia_design": [
+        {
+          "id": "MD001",
+          "role": "Junior Graphic Designer",
+          "company": "Connor",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "connor.co",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "MD002",
+          "role": "Visual Content Designer",
+          "company": "Fiverr",
+          "rate": null,
+          "location": "Remote",
+          "url": "fiverr.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "MD003",
+          "role": "Junior Multimedia Designer",
+          "company": "99designs",
+          "rate": null,
+          "location": "Remote",
+          "url": "99designs.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "MD004",
+          "role": "Junior 3D Designer",
+          "company": "Blender",
+          "rate": null,
+          "location": "Remote",
+          "url": "blender.org",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD005",
+          "role": "Children's Content Designer",
+          "company": "CBeebies",
+          "rate": null,
+          "location": "London",
+          "url": "bbc.co.uk/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "MD006",
+          "role": "Junior Web Designer",
+          "company": "Shopify",
+          "rate": null,
+          "location": "Remote",
+          "url": "shopify.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD007",
+          "role": "Junior Illustrator",
+          "company": "Penguin Random House",
+          "rate": null,
+          "location": "London",
+          "url": "penguinrandomhouse.co.uk",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD008",
+          "role": "Junior Motion Graphics",
+          "company": "Canva",
+          "rate": null,
+          "location": "Remote",
+          "url": "canva.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD009",
+          "role": "Junior UX Designer",
+          "company": "Babbel",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "babbel.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD010",
+          "role": "Content Creator",
+          "company": "National Geographic",
+          "rate": null,
+          "location": "London",
+          "url": "natgeo.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high"
+        },
+        {
+          "id": "MD011",
+          "role": "Junior Video Editor",
+          "company": "Vimeo",
+          "rate": null,
+          "location": "Remote",
+          "url": "vimeo.com/jobs",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD012",
+          "role": "Creative Assistant",
+          "company": "ooom",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "ooom.com",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD013",
+          "role": "Junior Digital Designer",
+          "company": "Dyson",
+          "rate": null,
+          "location": "London",
+          "url": "dyson.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD014",
+          "role": "Junior Brand Designer",
+          "company": "Monzo",
+          "rate": null,
+          "location": "London",
+          "url": "monzo.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD015",
+          "role": "Junior Visual Designer",
+          "company": "Wise",
+          "rate": null,
+          "location": "London",
+          "url": "wise.com/careers",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ]
+        },
+        {
+          "id": "MD016",
+          "role": "Multimedia - Wikipedia",
+          "company": "en.wikipedia.org",
+          "location": "Remote/UK",
+          "url": "https://en.wikipedia.org/wiki/Multimedia",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359200"
+        },
+        {
+          "id": "MD017",
+          "role": "Flexible Multimedia Designer Remote Jobs",
+          "company": "www.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://www.indeed.com/q-multimedia-designer-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359208"
+        },
+        {
+          "id": "MD018",
+          "role": "MULTIMEDIA Definition & Meaning - Merriam-Webster",
+          "company": "www.merriam-webster.com",
+          "location": "Remote/UK",
+          "url": "https://www.merriam-webster.com/dictionary/multimedia",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359216"
+        },
+        {
+          "id": "MD019",
+          "role": "51 multimedia designer Jobs in Remote, February 2026",
+          "company": "www.glassdoor.com",
+          "location": "Remote/UK",
+          "url": "https://www.glassdoor.com/Job/remote-multimedia-designer-jobs-SRCH_IL.0,6_IS11047_KO7,26.htm",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359222"
+        },
+        {
+          "id": "MD020",
+          "role": "What is Multimedia? - GeeksforGeeks",
+          "company": "www.geeksforgeeks.org",
+          "location": "Remote/UK",
+          "url": "https://www.geeksforgeeks.org/computer-science-fundamentals/what-is-multimedia/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359233"
+        },
+        {
+          "id": "MD021",
+          "role": "71 Graphic Designer jobs in Stockholm ...",
+          "company": "www.linkedin.com",
+          "location": "Remote/UK",
+          "url": "https://www.linkedin.com/jobs/graphic-designer-jobs-stockholm",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359240"
+        },
+        {
+          "id": "MD022",
+          "role": "Multimedia Introduction - Online Tutorials Library",
+          "company": "www.tutorialspoint.com",
+          "location": "Remote/UK",
+          "url": "https://www.tutorialspoint.com/multimedia/multimedia_introduction.htm",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359249"
+        },
+        {
+          "id": "MD023",
+          "role": "Remote Multimedia Jobs",
+          "company": "www.workingnomads.com",
+          "location": "Remote/UK",
+          "url": "https://www.workingnomads.com/remote-multimedia-jobs",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359255"
+        },
+        {
+          "id": "MD024",
+          "role": "MULTIMEDIA Definition & Meaning | Dictionary.com",
+          "company": "www.dictionary.com",
+          "location": "Remote/UK",
+          "url": "https://www.dictionary.com/browse/multimedia",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359261"
+        },
+        {
+          "id": "MD025",
+          "role": "What is Multimedia? - Library & Information Science Education Network",
+          "company": "www.lisedunetwork.com",
+          "location": "Remote/UK",
+          "url": "https://www.lisedunetwork.com/what-is-multimedia/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359275"
+        },
+        {
+          "id": "MD026",
+          "role": "19 lediga jobb f\u00f6r Remote Graphic Designer - 27 februari 2026",
+          "company": "se.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://se.indeed.com/q-remote-graphic-designer-jobb.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359283"
+        },
+        {
+          "id": "MD027",
+          "role": "What is Multimedia - Categories, Uses, and Components",
+          "company": "educatecomputer.com",
+          "location": "Remote/UK",
+          "url": "https://educatecomputer.com/what-is-multimedia/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359292"
+        },
+        {
+          "id": "MD028",
+          "role": "The #1 Job Board for Remote Graphic Design Jobs",
+          "company": "dribbble.com",
+          "location": "Remote/UK",
+          "url": "https://dribbble.com/remote-design-jobs",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359298"
+        },
+        {
+          "id": "MD029",
+          "role": "What Is Multimedia? - Computer Hope",
+          "company": "www.computerhope.com",
+          "location": "Remote/UK",
+          "url": "https://www.computerhope.com/jargon/m/multimed.htm",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359306"
+        },
+        {
+          "id": "MD030",
+          "role": "Graphic Design Freelance Jobs: Work Remote & Earn Online",
+          "company": "www.upwork.com",
+          "location": "Remote/UK",
+          "url": "https://www.upwork.com/freelance-jobs/graphic-design/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359311"
+        },
+        {
+          "id": "MD031",
+          "role": "What is Multimedia? Meaning, Uses, and Importance",
+          "company": "freenology.com",
+          "location": "Remote/UK",
+          "url": "https://freenology.com/what-is-multimedia/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359317"
+        },
+        {
+          "id": "MD032",
+          "role": "Remote Graphic Design Jobs Online - Work From Home",
+          "company": "remote.co",
+          "location": "Remote/UK",
+          "url": "https://remote.co/remote-jobs/graphic-design",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359323"
+        },
+        {
+          "id": "MD033",
+          "role": "MULTIMEDIA definition and meaning | Collins English Dictionary",
+          "company": "www.collinsdictionary.com",
+          "location": "Remote/UK",
+          "url": "https://www.collinsdictionary.com/dictionary/english/multimedia",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359329"
+        },
+        {
+          "id": "MD034",
+          "role": "Company Overview - Yiwu Rubysub Digital Graphic Co., Ltd.",
+          "company": "rubysub.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://rubysub.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359334"
+        },
+        {
+          "id": "MD035",
+          "role": "Flexible Remote Graphic Designer Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-remote-graphic-designer-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359340"
+        },
+        {
+          "id": "MD036",
+          "role": "Company Overview - Beijing Humbird Digital Graphic Production Co., \u2026",
+          "company": "cn1574273335jowz.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://cn1574273335jowz.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359348"
+        },
+        {
+          "id": "MD037",
+          "role": "Flexible Remote Graphics Designer Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-remote-graphics-designer-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359355"
+        },
+        {
+          "id": "MD038",
+          "role": "Company Overview - Shanghai Xuanqi Graphic Design Co., Ltd.",
+          "company": "xuanqituwen.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://xuanqituwen.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359360"
+        },
+        {
+          "id": "MD039",
+          "role": "Graphic Designer jobs in Remote",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-designer-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359366"
+        },
+        {
+          "id": "MD040",
+          "role": "Company Overview - Photo USA Electronic Graphic Inc.",
+          "company": "meikeda.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://meikeda.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359374"
+        },
+        {
+          "id": "MD041",
+          "role": "Flexible Graphic Designer Remote UK Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-designer-remote-uk-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359381"
+        },
+        {
+          "id": "MD042",
+          "role": "Company Overview - Guangzhou Xinqi Graphic Printing Co., Ltd.",
+          "company": "ecoprint.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://ecoprint.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359386"
+        },
+        {
+          "id": "MD043",
+          "role": "Flexible Remote Graphic Designer Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-remote-graphic-designer-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359391"
+        },
+        {
+          "id": "MD044",
+          "role": "Company Overview - Shenzhen Lanfang Digital Graphic Co., Ltd.",
+          "company": "lancoda.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://lancoda.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359396"
+        },
+        {
+          "id": "MD045",
+          "role": "Graphic Design Home Based Work, jobs (with Salaries)",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-design-home-based-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359403"
+        },
+        {
+          "id": "MD046",
+          "role": "Products list direct from CN",
+          "company": "huionglobal.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://huionglobal.en.alibaba.com/productgrouplist-960250256/Graphic_Tablet.html?scene=all",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359408"
+        },
+        {
+          "id": "MD047",
+          "role": "Graphic Design jobs in Remote",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-design-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359413"
+        },
+        {
+          "id": "MD048",
+          "role": "Company Overview - Shenzhen Huion Trend Technology Co., Ltd.",
+          "company": "huiongraphictablet.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://huiongraphictablet.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359418"
+        },
+        {
+          "id": "MD049",
+          "role": "Flexible Graphic Designer Remote Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-designer-remote-l-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359423"
+        },
+        {
+          "id": "MD050",
+          "role": "Flexible Graphic Designer Remote Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-graphic-designer-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359432"
+        },
+        {
+          "id": "MD051",
+          "role": "Company Overview - Changsha Jiarui Technology Co.,ltd",
+          "company": "jrdisplay.en.alibaba.com",
+          "location": "Remote/UK",
+          "url": "https://jrdisplay.en.alibaba.com/",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359437"
+        },
+        {
+          "id": "MD052",
+          "role": "Flexible Marketing Graphic Design Remote Jobs",
+          "company": "uk.indeed.com",
+          "location": "Remote/UK",
+          "url": "https://uk.indeed.com/q-marketing-graphic-design-remote-jobs.html",
+          "status": "not_applied",
+          "suitable_for": [
+            "multimedia_candidate"
+          ],
+          "priority": "high",
+          "source": "SearXNG",
+          "scraped": "2026-02-28T04:20:39.359442"
+        }
+      ],
+      "education": [
+        {
+          "id": "ED001",
+          "role": "Teaching Assistant",
+          "company": "Primary Schools UK",
+          "rate": null,
+          "location": "UK",
+          "url": "teaching-vacancies.service.gov.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "ED002",
+          "role": "Learning Mentor",
+          "company": "Secondary Schools UK",
+          "rate": null,
+          "location": "UK",
+          "url": "teaching-vacancies.service.gov.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "ED003",
+          "role": "Cover Supervisor",
+          "company": "Academy Schools",
+          "rate": null,
+          "location": "UK",
+          "url": "teaching-vacancies.service.gov.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "ED004",
+          "role": "Online Tutor",
+          "company": "Third Space Learning",
+          "rate": null,
+          "location": "Remote",
+          "url": "thirdspacelearning.com",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "ED005",
+          "role": "Tutor",
+          "company": "Superprof",
+          "rate": null,
+          "location": "Remote UK",
+          "url": "superprof.co.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        },
+        {
+          "id": "ED006",
+          "role": "Education Content Creator",
+          "company": "Teach First",
+          "rate": null,
+          "location": "London",
+          "url": "teachfirst.org.uk",
+          "status": "not_applied",
+          "suitable_for": []
+        }
+      ]
+    },
+    "candidates": {
+      "multimedia_candidate_20260228": {
+        "name": "Multimedia Design Candidate",
+        "date": "2026-02-28",
+        "skills": [
+          "graphic design",
+          "illustration",
+          "3D",
+          "web design",
+          "content writing",
+          "multimedia"
+        ],
+        "best_matches": [
+          "CM004",
+          "CM005",
+          "MD001",
+          "MD002",
+          "MD003",
+          "CM026",
+          "AI016",
+          "AI017"
+        ]
+      }
+    },
+    "stats": {
+      "total_jobs": 81,
+      "content_moderation": 30,
+      "ai_training": 20,
+      "multimedia_design": 15,
+      "education": 6,
+      "suitable_for_multimedia_candidate": 28
+    }
+  }
+}
